@@ -1,0 +1,12 @@
+Hi <%= @username %>,
+
+You've successfully uploaded your resume (with filename <%= @filename %>) to YouIntern!  Your resume is visible in your profile, and you are now eligible to apply for any of the internships listed on YouIntern.
+
+To search for internships, visit the search page on YouIntern.com: http://new.youintern.com/search/some_internships
+
+To change or edit your resume, log-in at our homepage and visit your portfolio page.
+
+And if you have any questions at all, please email support@youintern.com.
+
+Thanks!
+the YouIntern.com team

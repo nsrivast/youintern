@@ -1,0 +1,117 @@
+<div id="EmployerInfo">
+	
+	<% if @logo_filename%>
+	  <img src="<%=@logo_filename%>" alt="employer logo" class="employerLogo"/>
+	<% else %>
+	  <img src="/images/employers/logo_placeholder.jpg" alt="employer logo" class="employerLogo"/>
+	<% end %>
+	<h2><%= @employer.company_name %></h2>
+	
+  	<table class="profileTable">
+    	<tr>
+        	<td width="50" class="tdlegend">Location:</td>	<td width = "200" class="tddata"><%= @employer.company_location %></td>
+		</tr><tr>
+        	<td width="50" class="tdlegend">Website:</td>	<td width = "200" class="tddata"><%= @employer.company_website %></td>
+		</tr><tr>
+        	<td width="50" class="tdlegend">Email:</td>		<td width = "200" class="tddata"><%= @employer.company_email %></td>
+		</tr><tr>
+        	<td width="50" class="tdlegend">About:</td>		<td width = "200" class="tddata"><%= @employer.company_about %></td>
+		</tr>
+  	</table>
+
+  	<h3>Internships Offered:</h3><br />
+  	<table class="profileTable">
+	
+		<% for internship in @employer.internships %>
+			<tr>
+			<% if internship.featured > -1 %>
+				<td><%= link_to internship.title, :action => 'internship', :id => internship.id %></td>
+				<td><%= internship.start_month %>/<%= internship.start_year %> - <%= internship.end_month %>/<%= internship.end_year %></td>
+			<% else %>
+				<td><%= internship.title %></td>
+				<td><%= @employer.company_name %> has not yet confirmed this internship. Stay tuned!</td>
+			<% end %>
+			</tr>
+		<% end %>
+	
+	  	<% if @employer.internships == [] -%>
+	    	<tr><td>Unfortunately this employer has not yet posted an internship.
+			<%= link_to 'Tell them you\'re interested', :controller => 'welcome', :action => 'interested', :id => @employer.id -%>
+	  		</td></tr>
+		<% end -%>    
+  	</table>
+
+  	<h3>Contact Information:</h3>	<br />
+  	<table class="profileTable">
+		<% if session[:user_id] == nil %>
+			<tr><td>
+	  				You must register to access this information! Click <%= link_to 'here', :controller => 'welcome', :action => 'register'%> to do so.<br />
+			</td></tr>
+		<% else %>
+	    <tr>
+	        <td width="50" class="tdlegend">First name:</td>	<td width = "200" class="tddata"><%= @employer.rep_first_name %></td>
+		</tr><tr>
+	        <td width="50" class="tdlegend">Last name:</td>	<td width = "200" class="tddata"><%= @employer.rep_last_name %></td>
+		</tr><tr>
+	        <td width="50" class="tdlegend">Email:</td>		<td width = "200" class="tddata"><%= @employer.rep_email %></td>
+		</tr><tr>
+	        <td width="50" class="tdlegend">Title:</td>		<td width = "200" class="tddata"><%= @employer.rep_title %></td>
+		</tr><tr>
+	        <td width="50" class="tdlegend">Phone:</td>		<td width = "200" class="tddata"><%= @employer.rep_phone %></td>
+		</tr><tr>
+	        <td width="50" class="tdlegend">About:</td>		<td width = "200" class="tddata"><%= @employer.rep_about %></td>
+		</tr>
+			<% end %>
+  	</table>
+
+  	<h3>Employee Reviews:</h3><br />
+	<table class="profileTable">
+		
+  	<% for review in @employer.reviews %>
+	<tr><td>
+    	<a name="review_<%= review.id %>"></a>
+		<b><%= review.student.username %></b> says:
+		<em><%= review.review[0..200] %></em>
+		(<a href="#" onclick="Effect.BlindDown('full_review_<%= review.id %>'); return false;">Show full review</a>)
+
+		  <div id="full_review_<%= review.id %>" style="display:none;">
+		  <ul>
+			<li><b>Employer</b>: 		<%= @employer.company_name %> </li>
+			<li><b>Review Name</b>: 	<%= review.review_name %> </li>
+			<li><b>Job Title</b>: 		<%= review.job_title %> </li>
+			<li><b>City</b>: 			<%= review.city %> </li>
+			<li><b>State</b>: 			<%= review.state %> </li>
+			<li><b>Semester</b>: 		<%= review.semester %> </li>
+			<li><b>Year</b>: 			<%= review.year %> </li>
+		
+			<li><b>Ratings:</b><br />
+				Treatment - <%= review.rating_treatment %>,
+				Participation - <%= review.rating_participation %>,
+				Networking - <%= review.rating_networking %>,
+				Opportunity - <%= review.rating_opportunity %>,
+				Responsibility - <%= review.rating_responsibility %>,
+				Development - <%= review.rating_development %>,
+				Overall - <%= review.rating_overall %> </li>
+		
+			<li><b>Compensation</b>: 		<%= review.compensation %> </li>
+			<li><b>Responsibilities</b>: 	<%= review.responsibilities %> </li>
+			<li><b>Environment</b>: 		<%= review.environment %> </li>
+			<li><b>Interview</b>: 			<%= review.interview %> </li>
+			<li><b>Advice</b>: 				<%= review.advice %> </li>
+			<li><b>Offer</b>: 				<%= review.offer %> </li>
+			<li><b>Full Review</b>: 		<%= review.review %> </li>
+			
+			<li><a href="#" onclick="Effect.BlindUp('full_review_<%= review.id %>'); return false;">
+				Hide full review</a></li>
+		  </ul>
+		  </div>
+	</td></tr>
+  	<% end %>
+
+  	<% if @employer.reviews == [] %>
+		<tr><td>Nobody has reviewed this employer yet.
+		<%= link_to 'Be the first!', :controller => 'student', :action => 'write_review' %></td></tr>
+  	<% end %>
+	
+	</table>
+</div>

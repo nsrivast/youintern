@@ -1,0 +1,11 @@
+<% fps = Internship.featured_post %>
+
+<% if fps.length > 0 %>
+	<% x = rand(fps.length) %>
+	Featured Post: <%= fps[x].title %>
+<% end %>
+
+<div class="featuredPosting">
+	<p><img src="/images/employers/cliff_freeman_logo.jpg"> <strong>Account Manager</strong><br /> at <a href="#">Cliff Freeman</a></p>
+</div>
+

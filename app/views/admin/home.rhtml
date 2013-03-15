@@ -1,0 +1,23 @@
+<div id="AdminInfo">
+	<h2><span class="gray">Admin Home Page</h2>
+		
+	<div class="blockHeader">
+		Welcome, <em><%= @admin.username %></em> ...
+		<%= link_to "upload a logo", :action => 'upload_logo' %>
+	</div>
+	
+	<a name="info"></a><div class="infoBlock">
+	  <table class="profileTable">
+		<tr>
+	      <td width="50">Username:</td>			<td width = "200"><%= @admin.username %></td>
+		</tr><tr>
+	      <td width="50">First Name:</td>		<td width = "200"><%= @admin.first_name %></td>
+		</tr><tr>
+	      <td width="50">Last Name:</td>		<td width = "200"><%= @admin.last_name %></td>
+		</tr><tr>
+	      <td width="50">Email:</td>			<td width = "200"><%= @admin.email %></td>
+		</tr><tr>
+	  </table>
+	</div>
+	
+</div>

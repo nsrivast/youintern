@@ -1,0 +1,16 @@
+development:
+  adapter: mysql
+  database: new_development
+
+test:
+  adapter: mysql
+  database: new_test
+  timeout: 5000
+
+production:
+  adapter: mysql
+  database: db9257_new_production
+  username: db9257
+  password: fKBqQRXP
+  host: internal-db.s9257.gridserver.com
+  timeout: 5000

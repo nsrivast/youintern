@@ -1,0 +1,40 @@
+8
+
+dir
+1173
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository/trunk/public/stylesheets/blueprint/plugins/fancy-type
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository
+
+
+
+2008-09-19T07:31:24.045034Z
+135
+intern-u.com
+
+
+svn:special svn:externals svn:needs-lock
+
+screen.css
+file
+
+
+
+
+2008-09-10T02:00:20.000000Z
+d8f8900e540204da95db7d4ac465be2f
+2008-09-19T07:31:24.045034Z
+135
+intern-u.com
+
+readme.txt
+file
+
+
+
+
+2008-09-10T02:00:20.000000Z
+4e88733cdf0edfd23cc565790a70ac9f
+2008-09-19T07:31:24.045034Z
+135
+intern-u.com
+

@@ -1,0 +1,110 @@
+<div id="EmployerInfo">
+	
+    <div class="blockHeader" style="margin-left:10px; height:100px;">
+		<h1><span class="gray">My Portfolio: Employer</span></h1>
+		<h3> &nbsp; Welcome, <em><%= @employer.username %></em>!</h3>
+	</div>
+	
+	<div class="infoBlock">
+		<ul>
+			<li><b><%= link_to 'Add an internship', :action => 'pricing' %></b></li>
+			<li><%= link_to 'See this page', :controller => 'search', :action => 'employer', :id => @employer %>
+				as a student would see it</li>
+			<li><%= link_to 'Change your password', :controller => 'welcome', :action => 'change_password' %></li>
+			<li>
+				<% if @logo_filename %>
+					Your logo (<%= link_to "replace this logo", {:action => 'upload_logo'},
+						 	:confirm => "Do you really want to replace it? Your old logo will be deleted from our servers."%>):
+				
+					<div id="logo">
+						<img src="<%=@logo_filename%>" alt="employer logo" class="employerLogo"/>
+					</div>
+			  	<% else %>
+			    	<%= link_to 'Upload a logo', :action => 'upload_logo' %>
+			  	<% end %>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="infoBlock">
+  	  <h3>Your company's information:</h3>
+  	  (<%= link_to "edit", :action => "edit_info", :id => @employer %>)<br />
+	  <table class="profileTable">
+	    <tr>
+	        <td width="50">Name:</td>		<td width = "200"><%= @employer.company_name %></td>
+		</tr><tr>
+	        <td width="50">Location:</td>	<td width = "200"><%= @employer.company_location %></td>
+		</tr><tr>
+	        <td width="50">ZIP:</td>		<td width = "200"><%= @employer.company_locationzip %></td>
+		</tr><tr>
+	        <td width="50">Website:</td>	<td width = "200"><%= @employer.company_website %></td>
+		</tr><tr>
+	        <td width="50">Email:</td>		<td width = "200"><%= @employer.company_email %></td>
+		</tr><tr>
+	        <td width="50">About:</td>		<td width = "200"><%= @employer.company_about %></td>
+		</tr>
+	  </table>
+	</div>
+
+	<div class="infoBlock">
+	  <h3>Your representative's information:</h3> 
+	  (<%= link_to "edit", :action => "edit_info", :id => @employer %>)<br />
+	
+	  	<table class="profileTable">
+		    <tr>
+		        <td width="50">First name:</td>	<td width = "200"><%= @employer.rep_first_name %></td>
+			</tr><tr>
+		        <td width="50">Last name:</td>	<td width = "200"><%= @employer.rep_last_name %></td>
+			</tr><tr>
+		        <td width="50">Email:</td>		<td width = "200"><%= @employer.rep_email %></td>
+			</tr><tr>
+		        <td width="50">Title:</td>		<td width = "200"><%= @employer.rep_title %></td>
+			</tr><tr>
+		        <td width="50">Phone:</td>		<td width = "200"><%= @employer.rep_phone %></td>
+			</tr><tr>
+		        <td width="50">About:</td>		<td width = "200"><%= @employer.rep_about %></td>
+			</tr>
+		  </table>
+  	</div>
+</div>
+
+<br />
+
+<div id="EmployerInternships">
+  <h3>Your internships:</h3>
+  <b>** Internship status takes up to 24 hours to update after a payment</b><br /><br />
+  <% for internship in @employer.internships -%>	
+	  <table class="profileTable">
+		<tr>
+		  <td width="50"><b>Title</b></td>		<td width = "200"><%= internship.title %> &nbsp; - <%= link_to 'see as a student would see it', :controller => 'search', :action => 'internship', :id => internship.id %></td>
+		
+		</tr><tr>
+		  <td width="50"><b>Status</b></td>	<td width = "200"><%= Internship.feature_status(internship) %></td>
+		</tr><tr>
+		  <td width="50">Applicants</td> <td width = "200">
+				
+				<% if internship.students != [] -%> 
+					<b><u>The following students have applied for this internship:</u></b> 
+					<ul><% for student in internship.students %>
+						<li><%= student.first_name %> <%= student.last_name %> (<%= student.email %>)
+							<% form_tag('/employer/download_resume') do %>
+							  <%= hidden_field_tag 'student_id', student.id.to_s %>
+							  <%= submit_tag "Download resume" %>
+							<% end %>
+						</li>
+					<% end %></ul>
+				<% else %>
+					None yet. Consider upgrading - we can help you send a customized email to thousands of students informing them of your open internship.
+				<% end %>
+				
+			</td>
+		</tr><tr> 
+		  <td><%= link_to "Edit this internship", :action => 'edit_internship', :id => internship %></td>
+		  <td><%= link_to "Delete this internship", {:action => 'delete_internship', :id => internship.id},
+		 											:confirm => "Really delete #{internship.title}?"%></td>
+		</tr>
+	  </table>
+  <% end %>
+  <%= link_to 'Add an internship', :action => 'pricing' %><br />
+
+</div>

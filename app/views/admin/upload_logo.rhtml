@@ -1,0 +1,23 @@
+<% @employers = Employer.find(:all, :order => "company_name") %>
+
+<div id="EmployerInfo">
+	
+	<div id="logoUpload">
+	  <h2><span class="gray">Upload a Logo for an Employer</span></h2>
+	</div>
+
+	<% form_tag('/admin/save_logo', :multipart => true) do %>
+
+		<p><label for="choose_employer">Choose an Employer</label>:
+		<%= select_tag :employer_id, options_for_select(@employers.map {|e| [e.company_name, e.id]}) %>
+	
+		<p><label for="upload_file">Select a file (must be .jpg or .png)</label>: 
+		<%= file_field_tag 'datafile' %></p>
+	
+		<p><label for="filename">Choose a desired filename</label>:
+		<%= text_field_tag 'filename', "company_name_logo" %></p>
+	
+		<%= submit_tag "Upload" %>
+
+	<% end %>
+</div>

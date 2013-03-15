@@ -1,0 +1,115 @@
+<div id="LeftColumn" class="span-15" style="background-image:none; margin:10px">
+<div class="user-form">
+	<h1>Register as a Student</h1>
+	
+	<p><img src="/images/bigbluepointer.gif" style="float:right; margin-left:10px; margin-top:-40px;">
+		We connect interns and employers. There are many benefits to creating an account on YouIntern.com. Register as a student and you can:
+	<ul>
+		<li>
+			Search through our hundreds of open internships from top employers nationwide
+	 	</li>
+		<li>
+			Upload your resume and apply directly through our site
+		</li>
+		<li>
+			Add your skills and interests to your Portfolio so <strong>employers can offer you internships</strong>.
+		</li>
+		<li>
+			Read and write internship reviews
+		</li>
+	</ul>
+	</p>
+	<p style="font-size:105%;">YouIntern.com. Always free for students.</p>
+	<p>
+  <%= error_messages_for 'student', :header_message => 'Please try again!', :message => 'We had some problems confirming your account details.' %>
+	</p>
+
+  <fieldset>
+  <% form_for :student do |form| %>
+	
+	
+	<% field_set_tag 'Account information' do %>
+	<table class="formData">
+		<tr>
+			<td><label for="username">*Username:</label></td>
+	  		<td><%= form.text_field :username, :size => 20%></td>
+		</tr>
+    	<tr>
+	  		<td><label for="password">*Password:</label></td>
+	  		<td><%= form.password_field :password, :size => 20%></td>
+		</tr>
+    	<tr>
+	  		<td><label for="password">*Confirm password:</label></td>
+	  		<td><%= form.password_field :password_confirmation, :size => 20%></td>
+		</tr>
+	</table>
+	<% end %>
+	
+	<% field_set_tag 'Personal information' do %>
+    <table class="formData">
+	  <tr>
+		<td><label for="first_name">*Name:</label></td>
+	  	<td><%= form.text_field :first_name, :size => 20%> (first)
+	  	<%= form.text_field :last_name, :size => 20%> (last)</td>
+	 </tr>
+    <tr>
+	  <td><label for="email">*Email:</label></td>
+	  <td><%= form.text_field :email, :size => 20%></td>
+	</tr>
+	<tr>
+		<td><label for="school">School:</label></td>
+		<td><%= form.text_field :school, :size => 20%></td>
+	</tr>
+	<tr>
+		<td><label for="grad_year">Graduation Year:</label></td>
+		<td><%= form.select(:grad_year, 2005..2020) %></td>
+	</tr>
+	</table>
+	<% end %>
+	
+	<% field_set_tag 'Career information' do %>
+	<p>This information is not required, but ...</p>
+	<ul>
+	<li><p>by telling us where you live and/or want to work, we can show you location-specific<br />
+		internship openings and even connect you with students who live near you
+			<table class="formData">
+			  <tr>
+				<td><label for="email">Live:</label></td>
+			  	<td><%= form.text_field :location, :size => 20%> (city, state)
+			  	<%= form.text_field :location_zip, :size => 10%> (ZIP)</td>
+				</tr>
+				<tr>
+			  		<td><label for="email">Work:</label></td>
+				  	<td><%= form.text_field :desired_location, :size => 20%> (city, state)
+				  <%= form.text_field :desired_location_zip, :size => 10%> (ZIP)</td>
+			</table>
+	</li>
+	<li>by telling us your interests and skills, employers will be able to search your Portfolio and offer you internships. <br /><%= check_box_tag :huntable, params[:huntable], true %> Checking this box to allow employers to search for you increases the number of offers you can receive.</li>
+		    <table class="formData">
+			  <tr>
+				<td><label for="about_me">About you:</label></td>
+			  	<td><%= form.text_area :about_me, :size => "200x5"%></td>
+			</tr>
+		   <tr>
+			  <td><label for="interested_in">Interests: (academic, career, hobbies)</label></td>
+			  <td><%= form.text_area :interested_in, :size => "200x5"%></td>
+			</tr>
+		   <tr>
+			  <td><label for="skills">Skills: (technical, areas of expertise)</label></td>
+			  <td><%= form.text_area :skills, :size => "200x5"%></td>
+			</tr>
+			</table>
+		</li>
+	</ul>
+	Of course, <b>we'll never share your information with anyone without your consent.</b><br />
+	(<%= link_to 'Our privacy statement', :action => 'privacy' %>).
+
+	<% end %>
+	
+	<br /><br />
+	<%= submit_tag "Register!", :class => 'submit' %>
+
+  <% end %>
+  </fieldset>
+</div>
+</div>

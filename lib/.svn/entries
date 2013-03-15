@@ -1,0 +1,43 @@
+8
+
+dir
+1173
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository/trunk/lib
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository
+
+
+
+2008-09-12T02:02:10.808144Z
+8
+intern-u.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f92bc1bc-9956-0410-80bb-b96374333bb2
+
+tasks
+dir
+
+search.rb
+file
+
+
+
+
+2008-09-12T00:38:42.000000Z
+0e16a252df6ff926bbff8bdf202a5670
+2008-09-12T02:02:10.808144Z
+8
+intern-u.com
+

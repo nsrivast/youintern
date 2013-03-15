@@ -1,0 +1,61 @@
+<div id="EmployerInfo">
+	
+	<h2><%= link_to @employer.company_name, :action => 'employer', :id => @employer.id %>:
+		 <%= @internship.title %></h2>
+	<hr />
+	
+	<h3>Employer Information:</h3><br />
+	<table class="profileTable">
+	   	<tr>
+	       	<td width="50" class="tdlegend">Location:</td>	<td width = "200" class="tddata"><%= @employer.company_location %></td>
+		</tr><tr>
+	       	<td width="50" class="tdlegend">Website:</td>	<td width = "200" class="tddata"><%= @employer.company_website %></td>
+		</tr><tr>
+	       	<td width="50" class="tdlegend">Email:</td>		<td width = "200" class="tddata"><%= @employer.company_email %></td>
+		</tr><tr>
+	       	<td width="50" class="tdlegend">About:</td>		<td width = "200" class="tddata"><%= @employer.company_about %></td>
+		</tr>
+	</table>
+  
+  	<h3>Internship Information:</h3><br />
+	<table class="profileTable">
+		<tr>
+			<td>Title:</td>				<td><%= @internship.title %></td>
+		</tr><tr>
+			<td>Department:</td> 		<td><%= @internship.department %> </td>
+		</tr><tr>
+			<td>Location:</td> 			<td><%= @internship.location %> </td>
+		</tr><tr>
+			<td>Description:</td> 		<td><%= @internship.description %> </td>
+		</tr><tr>
+			<td>Requirements:</td> 		<td><%= @internship.requirements %> </td>
+		</tr><tr>
+			<td>Commitment (hrs/week):</td> 	<td><%= @internship.commitment %> </td>
+		</tr><tr>
+			<td>Deadline:</td> 			<td><%= @internship.deadline_month %>/<%= @internship.deadline_year %></td>
+		</tr>
+  	</table>
+
+	<h3>How to Apply:</h3><br />
+	<% if session[:user_id] == nil %>
+		You must log in or <%= link_to 'register', :controller => 'welcome', :action => 'register_as_student'%> as a student to apply for this internship.
+	<% else %>
+		<p><%= @internship.how %></p>
+		<p>Click <%= link_to 'here', :controller => 'student', :action => 'apply', :id => @internship.id %> to apply</p>
+	<% end %>
+
+	<br /><br /><br />
+	<div id="EHS_banner">
+		<a target="_blank" href="http://www.studenthousing.org?utm_campaign=YouIntern&utm_medium=Link&utm_source=website ">
+			<img src="/images/EHS_Banner2.jpg" />
+		</a>
+	</div>
+         
+    <br /><br /><br />
+	<div id="loftstelBanner">
+		<a href="http://www.loftstel.com/links/youintern.php">
+			<img src="http://www.loftstel.com/images/admin/youinternbanner.gif" />
+		</a>
+	</div>
+	
+</div>

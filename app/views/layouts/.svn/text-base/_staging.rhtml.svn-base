@@ -1,0 +1,69 @@
+<div id="LeftColumn" class="span-16" style="background-image:none;">
+	<% if flash[:notice] -%>
+	  <div id="notice">
+		<b><font color="yellow">
+			<%= flash[:notice] %>
+		</font></b>
+	</div>
+	<% end -%>
+
+	<%= yield :layout %>
+</div>
+
+<% if @display_right %>
+<!-- LATEST ACTIVITY ON RIGHT -->
+<div id="RightColumn" class="span-8">
+  <div class="rightColumnBox">
+
+	<h1><%= link_to 'Featured Internships >>', {:url => {:controller => 'welcome', :action => 'featured'}}, :style => "color:white;" %></h1>	
+	<ul>
+		<% Internship.featured_random(3).each_with_index do |i, j| %>
+			<li>
+				<strong id="blacklink_featured_0"><a href="/search/internship/<%=i.id%>"><%= i.title.to_s %></a></strong> at
+				<em><%= link_to i.employer.company_name.gsub("&", "&amp;").to_s, 
+							:controller => 'search', :action => 'employer', :id => i.employer %></em><br />
+				<span class="byline">Internship | <%= i.location %> | 
+					<% if i.created_at %><%= i.created_at.strftime("%b %d, %Y") %><% end %></span>				
+			</li>
+		<% end %>
+	</ul>
+	
+	<h1><%= link_to 'Latest Internships >>', {:url => {:controller => 'welcome', :action => 'latest_internships'}}, :style => "color:white;" %></h1>
+	<ul>
+	  	<% Internship.latest(3).each_with_index do |i, j| %>			
+		  <li><div class="internship_latest">
+			<strong id="blacklink0"><a href="/search/internship/<%=i.id%>"><%= i.title.to_s %></a>
+			</strong> at <em>
+			<%= link_to i.employer.company_name.gsub("&", "&amp;").to_s, :controller => 'search', :action => 'employer', :id => i.employer %>
+			</em><br /><span class="byline">Internship | <%= i.location %> | 
+				<% if i.created_at %><%= i.created_at.strftime("%b %d, %Y") %> <% end %></span>
+		  </div></li>
+		<% end %>
+	</ul>
+	
+	<h1><%= link_to 'Latest Students >>', {:url => {:controller => 'welcome', :action => 'latest_students'}}, :style => "color:white;" %></h1>
+		<ul>
+			<% Student.latest(4).each_with_index do |s,i| %>
+				<li>
+					<strong><%= s.username %></strong> | <%= s.school %>,
+					<i><%= s.created_at.strftime("%m/%d/%y") %></i>
+				</li>
+			<% end %>
+		</ul>
+
+	<h1><%= link_to 'Latest Tweets >>', {:url => "http://twitter.com/YouIntern"}, :style => "color:white;" %></h1>
+	<div id="LatestTweets" style="clear:both; margin-left:10px;">
+
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,124,0" width="290" height="350" id="TwitterWidget" align="middle">
+			<param name="allowScriptAccess" value="sameDomain" />
+			<param name="allowFullScreen" value="false" />
+			<param name="movie" value="http://static.twitter.com/flash/widgets/profile/TwitterWidget.swf" />
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="#000000" />
+			<param name="FlashVars" value="userID=17193221&styleURL=http://static.twitter.com/flash/widgets/profile/smooth.xml">
+			<embed src="http://static.twitter.com/flash/widgets/profile/TwitterWidget.swf" quality="high" bgcolor="#000000" width="290" height="350" name="TwitterWidget" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" FlashVars="userID=17193221&styleURL=http://static.twitter.com/flash/widgets/profile/smooth.xml"/>
+		</object>
+	</div>
+  </div>
+</div>
+<% end %>

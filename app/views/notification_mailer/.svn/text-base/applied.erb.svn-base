@@ -1,0 +1,1 @@
+Student <%= @student.username %> applied for internship: <%= @internship.title %> at <%= @internship.employer.company_name %>.

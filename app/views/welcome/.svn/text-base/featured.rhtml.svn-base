@@ -1,0 +1,38 @@
+<div id="LeftColumn" class="span-16">
+
+	<div id="Welcome" class="box">
+			<p class="largetext" style="font-size:40px; color:white; 
+		font-weight:bold; letter-spacing:-0.03em; margin-bottom:10px; opacity:.50;">
+			Our Featured Posts</p>
+	</div>
+	
+	<div id="FeaturedPostings" class="span-9">	
+		<ul>
+		<% @featured_posts.each_with_index do |i, j| %>
+			<li class="clearfix">
+				
+				<% @logos = Dir.glob('public/logos/' + i.employer.id.to_s + '*') %>
+				<% if @logos != [] %>
+				  <img class="featuredLogo" src="<%=@logos[0][6..-1]%>" alt="employer logo" class="employerLogo"/>
+				<% else %>
+				  <img class="featuredLogo" src="/images/employers/logo_placeholder.jpg" alt="employer logo" class="employerLogo"/>
+				<% end %>
+				<br />
+				
+				<strong id="blacklink_featured_0">
+				  <a href="/search/internship/<%=i.id%>"><%= i.title.to_s %></a>
+				</strong>
+				at <em><%= link_to i.employer.company_name.gsub("&", "&amp;").to_s, 
+							:controller => 'search', :action => 'employer', :id => i.employer %>
+				</em><br />
+				<span class="byline">Internship | <%= i.location %> | 
+					<% if i.created_at %><%= i.created_at.strftime("%b %d, %Y") %> <% end %>
+				</span><br /><br />
+				<%= i.description %>					
+			</li>
+			<br /><br />
+		<% end %>
+		</ul>
+</div>
+
+</div>

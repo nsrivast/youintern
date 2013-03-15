@@ -1,0 +1,1 @@
+Student uploaded resume with filename: <%= @filename %>.

@@ -1,0 +1,123 @@
+<div class="user-form">
+
+  <%= error_messages_for 'internship' %>
+	<h3>Edit Internship: <%= @internship.title %></h3>
+  <fieldset>
+
+  <% form_for :internship do |form| %>
+
+  <% field_set_tag 'Details' do %>
+    <table class="formData">
+	<tr>
+	  <td class="gray">Title:</td>
+	  <td><%= form.text_field :title, :size => 25, :value => @internship.title %></td>
+	</tr>
+	<tr>
+		<td class="gray">Department:</td>
+	  	<td><%= form.text_field :department, :size => 25, :value => @internship.department %></td>
+	</tr>
+	<tr>
+	  <td class="gray">Location:</td>
+	  <td><%= form.text_field :location, :size => 25, :value => @internship.location %> &nbsp; (city, state) &nbsp; &nbsp;
+	  	<%= form.text_field :location_zip, :size => 10, :value => @internship.location_zip %> &nbsp; (ZIP) </td>
+	</tr>
+	<tr>
+		<td class="gray">Job Description:</td>
+	  	<td><%= form.text_area :description, :value => @internship.description %></td>
+	</tr>
+	<tr>
+		<td class="gray">Position Requirements:</td>
+	  	<td><%= form.text_area :requirements, :value => @internship.requirements %></td>
+	</tr>
+	<tr>
+		<td class="gray">Expected Commitment:</td>
+	  	<td><%= form.text_field :commitment, :size => 30, :value => @internship.commitment %></td>
+	</tr>
+	<tr>
+	  	<td class="gray">How to apply:</td>
+	  	<td><%= form.text_field :how, :size => 30, :value => @internship.how %></td>
+	</tr>
+	</table>
+  <% end %>
+
+  <% field_set_tag 'Dates' do %>
+	<table class="formData">
+	<tr>
+		<td class="gray">Position Start Date:</td>
+		<td><%= form.select(:start_month, %w{Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec}.zip((1..12).to_a))%>
+			<%= form.select(:start_year, 2005..2015) %></td>
+	</tr>
+	<tr>
+		<td class="gray">Position End Date:</td>
+		<td><%= form.select(:end_month, %w{Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec}.zip((1..12).to_a))%>
+			<%= form.select(:end_year, 2005..2015) %></td>
+	</tr>
+	<tr>
+		<td class="gray">Application Deadline:</td>
+		<td><%= form.select(:deadline_month, %w{Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec}.zip((1..12).to_a))%>
+			<%= form.select(:deadline_year, 2005..2015) %></td>
+	</tr>
+	</table>
+  <% end %>
+
+  <% field_set_tag 'Contact Information (only viewable by registered students)' do %>
+	<table class="formData">
+	<tr>
+		<td class="gray">Contact Name:</td>
+		<td><%= form.text_field :contact, :size => 30, :value => @internship.contact %></td>
+	</tr>
+	<tr>
+		<td class="gray">Contact Email:</td>
+		<td><%= form.text_field :contact_email, :size => 30, :value => @internship.contact_email %></td> 
+	<tr>
+		<td class="gray">Contact Phone:</td> 
+		<td><%= form.text_field :contact_phone, :size => 30, :value => @internship.contact_phone %></td>
+	</tr>
+	</table>
+  <% end %>
+
+	<% field_set_tag 'Additional Questions' do %>
+		<p>When students apply for your internship, we'll send you an email with their 
+		name and email address and a link you can use to download their resume.</p>
+		
+		<p>If you'd like students to provide you with additional information when applying, 
+		you can select from the following check-boxes and create your own custom questions. 
+		(For example, "Why would you like to work at <%= @employer.company_name %>?").</p>
+		
+		<table>
+			<tr>
+				<td><%= check_box_tag :cb1, 'cb1', @cb_curr[0] %> Name </td>
+				<td><%= check_box_tag :cb2, 'cb2', @cb_curr[1] %> Email</td>
+				<td><%= check_box_tag :cb3, 'cb3', @cb_curr[2] %> Phone number</td>
+			</tr><tr>
+				<td><%= check_box_tag :cb4, 'cb4', @cb_curr[3] %> School/College </td>
+				<td><%= check_box_tag :cb5, 'cb5', @cb_curr[4] %> Major/Concentration</td>
+				<td><%= check_box_tag :cb6, 'cb6', @cb_curr[5] %> Graduation year</td>
+			</tr><tr>
+				<td><%= check_box_tag :cb7, 'cb7', @cb_curr[6] %> Web site</td>
+				<td><%= check_box_tag :cb8, 'cb8', @cb_curr[7] %> Current GPA</td>
+				<td></td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td width="150">First custom question:</td>
+				<td><%= form.text_field :extra1, :size => 60 %></td>
+			</tr>
+			<tr>
+				<td width="150">Second custom question:</td>
+				<td><%= form.text_field :extra2, :size => 60 %></td> 
+			<tr>
+				<td width="150">Third custom question:</td>
+				<td><%= form.text_field :extra3, :size => 60 %></td>
+			</tr>
+		</table>
+	<% end %>
+
+
+  <%= submit_tag "Update Info", :class => 'submit' %>
+
+  <% end %>
+  </fieldset>
+</div>

@@ -1,0 +1,185 @@
+<div id="EmployerInfo">
+
+<h2>Complete Payment</h2>
+
+  	Payment options for your internship:
+  		<strong id="blacklink"><%= link_to @internship.title, 
+						:controller => 'search', :action => 'employer', :id => @internship.employer %></strong>
+			at <em><%= link_to @internship.employer.company_name, 
+						:controller => 'search', :action => 'employer', :id => @internship.employer %></em><br /><br />					
+	
+	<% if @internship.featured == -1 %>
+  		Currently this internship can be accessed through your profile page, but will not be displayed in search results and will not accept student applications.
+		Please choose one of the following options to complete the submission. <b>(Note: payments take 24 hours to process.)</b><br /><br />
+	
+		<table class="profileTable">
+			<tr>
+				<td width="300px"><h4><b>Listing Type</b></h4></td>
+				<td><h4><b>Standard</b></h4></td>
+				<td><h4><b>Featured</b></h4></td>
+				<td><h4><b>Premium</b></h4></td>
+			</tr><tr>
+				<td><h4>(scroll over list items to find out more)</h4></td>
+				<td><center><h4>$20</h4></center></td>
+				<td><center><h4>$35</h4></center></td>
+				<td><center><h4>$60</h4></center></td>
+			</tr>
+			<%= render :partial => 'checkmarks' %>
+			<tr>
+				<td><h4></h4></td>
+				<td>
+				
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="business" value="nsrivast@gmail.com">
+				<input type="hidden" name="item_name" value="Standard Post for <%= @internship.title %> (<%= @internship.id %>), <%= @internship.employer.company_name %>">
+				<input type="hidden" name="item_number" value="standard_post">
+				<input type="hidden" name="amount" value="20.00">
+				<input type="hidden" name="shipping" value="0.00">
+				<input type="hidden" name="no_shipping" value="0">
+				<input type="hidden" name="no_note" value="1">
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="hidden" name="lc" value="US">
+				<input type="hidden" name="bn" value="PP-BuyNowBF">
+				<input type="image" width="80" height="40" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+			
+				</td><td>
+				
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="business" value="nsrivast@gmail.com">
+				<input type="hidden" name="item_name" value="Featured Post for <%= @internship.title %> (<%= @internship.id %>), <%= @internship.employer.company_name %>">
+				<input type="hidden" name="item_number" value="featured_post">
+				<input type="hidden" name="amount" value="35.00">
+				<input type="hidden" name="shipping" value="0.00">
+				<input type="hidden" name="no_shipping" value="0">
+				<input type="hidden" name="no_note" value="1">
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="hidden" name="lc" value="US">
+				<input type="hidden" name="bn" value="PP-BuyNowBF">
+				<input type="image" width="80" height="40" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		
+				</td><td>
+
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="business" value="nsrivast@gmail.com">
+				<input type="hidden" name="item_name" value="Premium Post for <%= @internship.title %> (<%= @internship.id %>), <%= @internship.employer.company_name %>">
+				<input type="hidden" name="item_number" value="premium_post">
+				<input type="hidden" name="amount" value="60.00">
+				<input type="hidden" name="shipping" value="0.00">
+				<input type="hidden" name="no_shipping" value="0">
+				<input type="hidden" name="no_note" value="1">
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="hidden" name="lc" value="US">
+				<input type="hidden" name="bn" value="PP-BuyNowBF">
+				<input type="image" width="80" height="40" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>	
+				</td>
+			</tr>
+		</table>
+	
+	<% elsif @internship.featured == 0 %>
+		This internship is currently a 'Standard' post. Choose one of the following to upgrade:<br /><br />
+
+		<table class="profileTable">
+			<tr>
+				<td width="300px"><h4><b>Listing Type</b></h4></td>
+				<td><h4><b>Standard</b></h4></td>
+				<td><h4><b>Featured</b></h4></td>
+				<td><h4><b>Premium</b></h4></td>
+			</tr><tr>
+				<td><h4></h4></td>
+				<td><center><h4>~</h4></center></td>
+				<td><center><h4>$15</h4></center></td>
+				<td><center><h4>$40</h4></center></td>
+			</tr>
+			<%= render :partial => 'checkmarks' %>
+			<tr>
+				<td><h4></h4></td>
+				<td>
+				</td><td>
+				
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="business" value="nsrivast@gmail.com">
+				<input type="hidden" name="item_name" value="Featured Post for <%= @internship.title %> (<%= @internship.id %>), <%= @internship.employer.company_name %>">
+				<input type="hidden" name="item_number" value="featured_post">
+				<input type="hidden" name="amount" value="15.00">
+				<input type="hidden" name="shipping" value="0.00">
+				<input type="hidden" name="no_shipping" value="0">
+				<input type="hidden" name="no_note" value="1">
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="hidden" name="lc" value="US">
+				<input type="hidden" name="bn" value="PP-BuyNowBF">
+				<input type="image" width="80" height="40" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		
+				</td><td>
+
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_xclick">
+				<input type="hidden" name="business" value="nsrivast@gmail.com">
+				<input type="hidden" name="item_name" value="Premium Post for <%= @internship.title %> (<%= @internship.id %>), <%= @internship.employer.company_name %>">
+				<input type="hidden" name="item_number" value="premium_post">
+				<input type="hidden" name="amount" value="40.00">
+				<input type="hidden" name="shipping" value="0.00">
+				<input type="hidden" name="no_shipping" value="0">
+				<input type="hidden" name="no_note" value="1">
+				<input type="hidden" name="currency_code" value="USD">
+				<input type="hidden" name="lc" value="US">
+				<input type="hidden" name="bn" value="PP-BuyNowBF">
+				<input type="image" width="80" height="40" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>	
+				</td>
+			</tr>
+		</table>
+		
+	<% elsif @internship.featured == 1 %>
+	This internship is currently a 'Featured' post. Choose one of the following to upgrade:<br /><br />
+
+	<table class="profileTable">
+		<tr>
+			<td width="300px"><h4><b>Listing Type</b></h4></td>
+			<td><h4><b>Standard</b></h4></td>
+			<td><h4><b>Featured</b></h4></td>
+			<td><h4><b>Premium</b></h4></td>
+		</tr><tr>
+			<td><h4></h4></td>
+			<td><center><h4>~</h4></center></td>
+			<td><center><h4>~</h4></center></td>
+			<td><center><h4>$25</h4></center></td>
+		</tr>
+		<%= render :partial => 'checkmarks' %>
+		<tr>
+			<td><h4></h4></td>
+			<td></td><td></td><td>
+
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_xclick">
+			<input type="hidden" name="business" value="nsrivast@gmail.com">
+			<input type="hidden" name="item_name" value="Premium Post for <%= @internship.title %> (<%= @internship.id %>), <%= @internship.employer.company_name %>">
+			<input type="hidden" name="item_number" value="premium_post">
+			<input type="hidden" name="amount" value="25.00">
+			<input type="hidden" name="shipping" value="0.00">
+			<input type="hidden" name="no_shipping" value="0">
+			<input type="hidden" name="no_note" value="1">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="lc" value="US">
+			<input type="hidden" name="bn" value="PP-BuyNowBF">
+			<input type="image" width="80" height="40" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>	
+			</td>
+		</tr>
+	</table>
+
+	<% end %>
+</div>

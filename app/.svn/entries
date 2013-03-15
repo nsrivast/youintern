@@ -1,0 +1,40 @@
+8
+
+dir
+1173
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository/trunk/app
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository
+
+
+
+2009-01-15T03:15:45.859699Z
+1173
+intern-u.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f92bc1bc-9956-0410-80bb-b96374333bb2
+
+helpers
+dir
+
+models
+dir
+
+controllers
+dir
+
+views
+dir
+

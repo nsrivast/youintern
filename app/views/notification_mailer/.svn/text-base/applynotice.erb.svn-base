@@ -1,0 +1,12 @@
+Dear <%= @internship.employer.company_name %>,
+
+A student has applied for one of your internships: <%= @internship.title %> at YouIntern.com. Log in to your home page at www.new.youintern.com to access their resume.
+
+Their application details are as follows (this is the additional information you requested when creating your internship):
+
+<% @details.each do |d| %>
+	<%= d %>
+<% end %>
+
+Best,
+YouIntern.com

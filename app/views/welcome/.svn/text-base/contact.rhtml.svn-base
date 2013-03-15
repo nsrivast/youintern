@@ -1,0 +1,22 @@
+<div id="LeftColumn" class="span-16" style="background-image:none;">
+<div class="user-form">
+	
+	<fieldset>
+		<h1>Contact Us</h1>
+		<p>We're interested in hearing from you. Fill out the form below and you'll receive a response as soon as possible.</p>
+		<% form_tag '/welcome/contact' do %>
+
+		  Your name: <%= text_field_tag :name, params[:name] %><br /><br />
+		  Your email: <%= text_field_tag :email, params[:email] %><br /><br /><br />
+	
+		  Topic of message: <%= text_field_tag :topic, params[:topic], :size => 60 %><br /><br />
+		  Message: <br />
+		  <%= text_area_tag :message, params[:message], :size => "200x5" %><br /><br />
+
+		  <%= submit_tag 'Submit', :class => 'submitButton' %>
+		<% end %>
+	</fieldset>
+
+</div>
+</div>
+

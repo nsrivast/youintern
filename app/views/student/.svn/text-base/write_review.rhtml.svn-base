@@ -1,0 +1,98 @@
+<div class="user-form">
+<h1><span class="gray">Review An Internship</span></h1>
+<p>Want to share your internship experience with others? This is the place to do it. We encourage you to be as detailed and honest as you possibly can. Reviews that are deemed helpful by your peers contribute positively to your reputation on YouIntern.</p>
+  <%= error_messages_for 'review' %>
+	<fieldset>
+  <% form_for :review do |form| %>
+	<% field_set_tag 'The Technical Stuff' do %>
+		<p>Choose an employer from the list below, and give us a little background information on your internship position.</p>
+	<table class="formData">
+	<tr>
+    	<td class="gray">Company Name:</td>
+	  	<td><%= form.select :employer_id, @employers.map {|e| [e.company_name, e.id]}%></td>
+	</tr>
+	<tr>  
+		<td class="gray">Review Name:</td>
+	  	<td><%= form.text_field :review_name, :size => 50, :value => @suggested_name %></td>
+	</tr>
+	<tr>
+	  	<td class="gray">Job Title:</td>
+	  	<td><%= form.text_field :job_title, :size => 30 %></td>
+	</tr>
+	<tr>
+	  <td class="gray">City:</td>
+	  <td><%= form.text_field :city, :size => 30 %></td>
+	</tr>
+	<tr>
+		<td class="gray">State:</td>
+	  	<td><%= form.text_field :state, :size => 2 %></td>
+	</tr>
+	<tr>
+	  <td class="gray">Semester:</td>
+	  <td><%= form.text_field :semester, :size => 30 %></td>
+	</tr>
+	<tr>
+	  <td >Year:</td>
+	  <td><%= form.text_field :year, :size => 10 %></td>
+	</tr>
+	</table>
+	<% end %>
+	
+	<% field_set_tag 'Rate Your Experience' do %>
+	<p>Rate this internship in each of the following areas on a scale of 1-5 (1 being the the lowest, and 5 the highest). You'll be able to give a more detailed description down below.</p>
+	<table class="formData">
+		<tr>
+			<td class="gray">Treatment: &nbsp; <%= form.select(:rating_treatment, 		[1,2,3,4,5].map {|n| [n.to_s, n]}) %></td>
+			<td class="gray">Participation: &nbsp; <%= form.select(:rating_participation, 	[1,2,3,4,5].map {|n| [n.to_s, n]}) %></td>
+			<td class="gray">Networking: &nbsp; <%= form.select(:rating_networking, 	[1,2,3,4,5].map {|n| [n.to_s, n]}) %></td>
+		</tr>
+		<tr>
+			<td class="gray">Opportunity: &nbsp; <%= form.select(:rating_opportunity, 	[1,2,3,4,5].map {|n| [n.to_s, n]}) %></td>
+			<td class="gray">Responsibility: &nbsp; <%= form.select(:rating_responsibility, [1,2,3,4,5].map {|n| [n.to_s, n]}) %></td>
+			<td class="gray">Development: &nbsp; <%= form.select(:rating_development, 	[1,2,3,4,5].map {|n| [n.to_s, n]}) %></td>
+			<td class="gray">Overall: &nbsp; <%= form.select(:rating_overall, 		[1,2,3,4,5].map {|n| [n.to_s, n]}) %></td>
+		</tr>
+	</table>
+	<% end %>
+	
+	<% field_set_tag 'Tell Us About It' do %>
+	<p>Give us a quick rundown on each of the following points.</p>
+	<table class="formData">
+	<tr>  
+		<td class="gray">Wage/Compensation:</td>
+	  	<td><%= form.text_field :compensation, :size => 30, :rows => 5 %></td>
+	</tr>
+	<tr>
+	  <td class="gray">Your Responsibilities:</td>
+	  <td><%= form.text_area :responsibilities, :size => 30 %></td>
+	</tr>
+	<tr>
+	  <td class="gray">Working Environment:</td>
+	  <td><%= form.text_area :environment, :size => 30 %></td>
+	</tr>
+	<tr>
+	  <td class="gray">Interview Process:</td>
+	  <td><%= form.text_area :interview, :size => 30 %></td>
+	</tr>
+	<tr>
+	  <td class="gray">Potential for Continued Employment:</td>
+	  <td><%= form.text_field :offer, :size => 30 %></td>
+	</tr>
+	</table>
+	<% end %>
+	
+	<% field_set_tag 'Write The Review' do  %>
+	<p>Describe your internship experience in as much detail as possible.</p>
+	<table class="formData">
+	<tr>
+	  <td class="gray">General Review:</td>
+	  <td><%= form.text_area :review, :size => 30 %></td>
+	</tr>
+	</table>
+	<% end %>
+	
+	<%= submit_tag "Create Review", :class => 'submit' %>
+
+  <% end %>
+  </fieldset>
+</div>

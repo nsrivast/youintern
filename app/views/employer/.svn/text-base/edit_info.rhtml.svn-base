@@ -1,0 +1,71 @@
+<div class="user-form">
+
+  <%= error_messages_for 'employer' %>
+
+  <fieldset>
+  <h1><span class="gray">Edit:</span> Your Company's Details</h1>
+	<p></p>
+
+  <% form_for :employer do |form| %>
+	
+	<% field_set_tag 'About your company' do %>
+	<table class="formData">
+	<tr>
+	  	<td class="gray">Name:</td>	  
+		<td><%= form.text_field :company_name, :size => 20, :value => @employer.company_name %></td>
+	</tr>
+	<tr>
+	  	<td class="gray">Location:</td>
+		<td><%= form.text_field :company_location, :size => 20%> (city, state)
+	  	<%= form.text_field :company_locationzip, :size => 20%> (ZIP)</td>
+	</tr>
+	<tr>
+		<td class="gray">Website:</td>
+		<td><%= form.text_field :company_website, :size => 20, :value => @employer.company_website %></td>
+	</tr>
+	<tr>
+		<td class="gray">Email:</td>
+		<td><%= form.text_field :company_email, :size => 20, :value => @employer.company_email %></td>
+	</tr>
+	<tr>
+		<td class="gray">Industry:</td>
+		<td><%= form.select(:company_iid, @IID_MAP.invert) %></td>
+	</tr>
+	<tr>
+		<td class="gray">About the company:</td>
+		<td><%= form.text_area :company_about, :value => @employer.company_about %></td>
+	</tr>
+	</table>
+	<% end %>
+	
+	<% field_set_tag 'About your representative' do %>
+	<table class="formData">
+	<tr>
+	  	<td class="gray">Name:</td>
+		<td><%= form.text_field :rep_first_name, :size => 20%> (first)
+	  		<%= form.text_field :rep_last_name, :size => 20%> (last)</td>
+	</tr>
+	<tr>
+	 	<td class="gray">Email:</td>
+		<td><%= form.text_field :rep_email, :size => 20, :value => @employer.rep_email %></td>
+	</tr>
+	<tr>
+		<td class="gray">Title:</td>
+		<td><%= form.text_field :rep_title, :size => 20, :value => @employer.rep_title %></td>
+	</tr>
+	<tr>
+		<td class="gray">Phone:</td>
+	  	<td><%= form.text_field :rep_phone, :size => 20, :value => @employer.rep_phone %></td>
+	</tr>
+	<tr>
+	  <td class="gray">About you:</td>
+	  <td><%= form.text_area :rep_about, :value => @employer.rep_about %></td>
+	</tr>
+	</table>
+	<% end %>
+    
+	<%= submit_tag "Update Info", :class => 'submit' %>
+
+  <% end %>
+  </fieldset>
+</div>

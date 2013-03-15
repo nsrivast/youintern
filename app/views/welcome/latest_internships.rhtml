@@ -1,0 +1,28 @@
+<div id="LeftColumn" class="span-16">
+
+	<div id="Welcome" class="box">
+			<p class="largetext" style="font-size:20px; color:white; 
+		font-weight:bold; letter-spacing:-0.03em; margin-bottom:10px; opacity:.50;">
+			Our 10 Most Recently Posted Internships</p>
+	</div>
+	
+	<div id="LatestInternships" class="span-9">	
+		<ul>
+		<% @latest_internships.each_with_index do |i, j| %>
+		  	<li class="clearfix">
+				<div class="internship_latest">
+					<strong id="blacklink"><a href="/search/internship/<%=i.id%>"><%= i.title.to_s %></a></strong>
+					at 
+					<em><strong>
+						<%= link_to i.employer.company_name.gsub("&", "&amp;").to_s, :controller => 'search', :action => 'employer', :id => i.employer %>
+					</em></strong>
+					<br /><span class="byline">Internship | <%= i.location %> | 
+						<% if i.created_at %><%= i.created_at.strftime("%b %d, %Y") %> <% end %></span>
+		  		</div>
+			</li>	
+			<br />
+		<% end %>
+		</ul>
+	</div>
+
+</div>

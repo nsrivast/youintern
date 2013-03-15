@@ -1,0 +1,22 @@
+<div id="LeftColumn" class="span-16" style="background-image:none;">
+<div class="user-form">
+	
+	<fieldset>
+		<h3>Interested in an Employer?</h3>
+	
+		<% form_tag '/welcome/interested' do %>
+
+		  Company: <%= text_field_tag :employer_name, params[:employer_name], :value => @name %><br /><br /><br />
+	
+		  Your name: <%= text_field_tag :name, params[:name] %><br /><br />
+		  Your email: <%= text_field_tag :email, params[:email] %><br /><br /><br />
+	
+		  Message (optional): <br />
+		  <%= text_area_tag :message, params[:message], :size => "200x5" %><br /><br />
+
+		  <%= submit_tag 'Submit', :class => 'submitButton' %>
+		<% end %>
+	</fieldset>
+
+</div>
+</div>

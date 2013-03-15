@@ -1,0 +1,28 @@
+<div id="LeftColumn" class="span-15" style="background-image:none; margin:10px">
+<div class="user-form">
+	<h2>Welcome to YouIntern!</h2>
+	
+	<p>
+		Before taking you to your home page, we invite you to <b>refer your friends</b> <br /> (or previous employers) to our website:
+	</p>
+
+	<fieldset>
+		<% form_tag '/welcome/student_contacts' do %>
+
+		  Enter email addresses - or import your contacts automatically:
+			<a href="#" onclick="showPlaxoABChooser('recipient_list', '/public/plaxo_cb.html'); return false">
+			  <img src="http://www.plaxo.com/images/abc/buttons/add_button.gif" alt="Add from my address book" />
+		    </a>
+		    <br />
+		  <%= text_area_tag :contact_emails, params[:contact_emails], :size => "200x3", :id => "recipient_list" %><br /><br />
+
+		  Message from you (optional):<br />
+		  <%= text_area_tag :message, @default_message, :size => "200x3" %><br />
+		
+		  <%= submit_tag 'Refer these people', :class => 'submitButton' %>
+		<% end %>
+	</fieldset>
+
+	<p> <%= link_to 'No thanks', :controller => 'student', :action => 'home' %>, just take me to my home page.</p>
+</div>
+</div>

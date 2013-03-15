@@ -1,0 +1,71 @@
+
+<% @months = %w{Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec}.zip((1..12).to_a) %>
+<% @years = (2009..2015) %>
+
+<div id="SearchResults">	
+	<h1><span class="gray">Search Internships</span></h1>
+	<p>Interactively search our database of employers by <b>keyword</b> or filter by <b>compensation, date, or location</b>.</p> 
+	<p>You can also view our <b><%= link_to 'full internship listings', :action => 'all_internships' %></b>,
+		or <b><%= link_to 'search for employers', :action => 'some_employers' %></b>.</p>
+	
+	<div>
+	<% form_tag('javascript:void(0)', :id => 'filter_input') do %>
+		
+		<% field_set_tag do %>
+			<table>
+				<tr>
+					<td><u>keyword (optional)</u></td>
+					<td><%= text_field_tag 'filter', params['filter_keyword'], :name => 'filter_keyword', :value => @keyword %> &nbsp;
+							<i id="spinner" style="display:none;"> retrieving your results ...</i></td>
+				</tr><tr>
+					<td><u>compensation type</u></td><td>
+						<b>only those offering course credit</b> <%= check_box_tag "course_credit", params["course_credit"], params["course_credit"] %> &nbsp;
+						<b>only paid internships</b> <%= check_box_tag "paid", params["paid"], params["paid"] %></td>						
+				</tr><tr>
+					<td><u>starting between</u></td><td>
+						<%= select_tag :start_month_a, options_for_select(@months, params[:start_month_a]) %>
+						<%= select_tag :start_year_a, options_for_select(@years, params[:start_year_a]) %>
+				 			&nbsp; and &nbsp; 
+						<%= select_tag :start_month_b, options_for_select(@months, params[:start_month_b]) %>
+						<%= select_tag :start_year_b, options_for_select(@years, params[:start_year_b]) %></td>
+				</tr><tr>
+					<td><u>ending between</u></td><td>
+						<%= select_tag :end_month_a, options_for_select(@months, params[:end_month_a]) %>
+						<%= select_tag :end_year_a, options_for_select(@years, params[:end_year_a]) %>
+				 			&nbsp; and &nbsp;  
+						<%= select_tag :end_month_b, options_for_select(@months, params[:end_month_b]) %>
+						<%= select_tag :end_year_b, options_for_select(@years, params[:end_year_b]) %></td>
+				</tr><tr>
+					<td><u>located in</u></td><td>						
+						<b>New York</b> <%= check_box_tag :ny, params[:ny], params[:ny] %> &nbsp;
+						<b>California</b> <%= check_box_tag :ca, params[:ca], params[:ca] %> &nbsp;
+						<b>Massachusetts</b> <%= check_box_tag :ma, params[:ma], params[:ma] %> &nbsp;
+						<b>DC</b> <%= check_box_tag :dc, params[:dc], params[:dc] %> &nbsp;
+						<br />
+						<b>Midwest</b> <%= check_box_tag :mw, params[:mw], params[:mw] %> &nbsp;
+						<b>Southeast</b> <%= check_box_tag :se, params[:se], params[:se] %> &nbsp;
+						<b>Northeast</b> <%= check_box_tag :ne, params[:ne], params[:ne] %> &nbsp;
+					</td>
+				</tr><tr>
+					<td><%= link_to 'reset all filters', :action => 'internships' %></td><td></td>
+				</tr>
+			</table>
+		<% end -%>
+	<% end -%>
+	</div>
+	
+	<%= observe_form :filter_input,
+      				    :frequency => 1,
+					    :update => 'filterer',
+					
+						:before => "Element.show('spinner')",
+			         	:success => "Element.hide('spinner')",
+			         
+	  				    :url => {:action => 'filter_internships', :only_path => false},
+						:with => "Form.serialize('filter_input')" %>
+	
+	<div id='filterer'>
+		<%= render :partial => 'filtered_internships'%>
+	</div>
+	
+</div>

@@ -1,0 +1,98 @@
+
+<div id="StudentInfo">
+	<h1><span class="gray">My Portfolio: Student</h1>
+	<div class="blockHeader">
+	  <h3>Welcome, <em><%= @student.username %></em>!</h3><br />
+		<p>This is your homepage. Here you can <a href="#resume">upload</a> resumes and cover letters for applications, <a href="#info">update</a> your personal information, <a href="#applications">track</a> the internships you've applied for, and <a href="#reviews">write</a> internship reviews.</p>
+		<p>Make sure to <%= link_to 'search', :controller => 'search', :action => 'some_internships' %> for internships, employers and reviews that strike your fancy. If you fill out your personal information, we'll even try our best to match you with internships that suit your interests!</p>
+	</div>
+	
+	<a name="resume"></a>
+	<h3>Your Resume</h3><br />
+	<% if @resume_filename %>
+		<% @resume_filename_short = @resume_filename[(15+(@student.id.to_s.length + 1))..-1] %>
+		You've saved a resume on our system: <%= link_to "(replace this resume)", {:action => 'upload_resume'},
+			 	:confirm => "Do you really want to replace #{@resume_filename_short}? The old file will be deleted from our servers."%>
+		
+		<p><%= @resume_filename_short %>
+			<% form_tag('/student/download_resume') do %>
+			  <%= hidden_field_tag 'filename', @resume_filename %>
+			  <%= submit_tag "View this resume" %>
+			<% end %>
+		</p>
+	<% else %>
+	  ** You have not yet uploaded a resume - <%= link_to 'click here', :action => 'upload_resume' %> to do so.
+	<% end %>
+
+	<br /><br />
+	<a name="info"></a><div class="infoBlock">
+	  <h3>Your information:</h3>
+	  (<%= link_to "edit", :action => "edit_info", :id => @student %>)<br />
+	  Click <%= link_to 'here', :controller => 'welcome', :action => 'change_password' %> to change your password.
+	  <table class="profileTable">
+		<tr>
+	      <td width="50">Username:</td>			<td width = "200"><%= @student.username %></td>
+		</tr><tr>
+	      <td width="50">First Name:</td>		<td width = "200"><%= @student.first_name %></td>
+		</tr><tr>
+	      <td width="50">Last Name:</td>		<td width = "200"><%= @student.last_name %></td>
+		</tr><tr>
+	      <td width="50">Email:</td>			<td width = "200"><%= @student.email %></td>
+		</tr><tr>
+	      <td width="50">Location:</td>			<td width = "200"><%= @student.location %></td>
+		</tr><tr>
+	      <td width="50">ZIP:</td>				<td width = "200"><%= @student.location_zip %></td>
+		</tr><tr>
+	      <td width="50">Desired Location:</td>	<td width = "200"><%= @student.desired_location %></td>
+		</tr><tr>
+	      <td width="50">ZIP:</td>				<td width = "200"><%= @student.desired_location_zip %></td>
+		</tr><tr>
+	      <td width="50">About me:</td>			<td width = "200"><%= @student.about_me %></td>
+		</tr><tr>
+	      <td width="50">Interested in:</td>	<td width = "200"><%= @student.interested_in %></td>
+		</tr><tr>
+	      <td width="50">Skills:</td>			<td width = "200"><%= @student.skills %></td>
+		</tr><tr>
+	  </table>
+	  <%= link_to "Edit my info", :action => "edit_info", :id => @student %>
+	</div>
+</div>
+
+<div id="StudentApplications">
+  <a name="applications"></a><h3>Internships you've applied for:</h3>
+  <% for internship in @student.internships %>
+	  <table class="profileTable">
+	  	<tr>
+		  <td width="50">Title:</td>		<td width = "200"><%= internship.title %></td>
+		</tr><tr>
+		  <td width="50">Department:</td>	<td width = "200"><%= internship.department %></td>
+		</tr><tr>
+		  <td width="50">Location:</td>		<td width = "200"><%= internship.location %></td>
+		</tr><tr>
+		  <td width="50">Contact:</td>		<td width = "200"><%= internship.contact %>, <%= internship.contact_email %></td>
+		</tr>
+	  </table>
+  <% end %>
+  
+  <%= link_to "Apply for more internships", :controller => 'search', :action => "some_internships" %>
+
+</div>
+
+<div id="StudentReviews">
+  <a name="reviews"></a><h3>Your reviews:</h3>
+  <table class="profileTable">
+  <% for review in @student.reviews %>
+	<tr>
+	  <td width="300">
+		<%= review.job_title %><br />
+		<i>"<%= review.review[0..200] %></i> ..."<br />
+	    about <b><%= review.employer.company_name %></b><br />
+		<%= link_to '(edit review)', :action => 'edit_review', :id => review.id %>
+	  </td>
+	</tr>
+  <% end %>
+  </table>
+
+  <%= link_to "Write a review", :action => "write_review" %>
+
+</div>

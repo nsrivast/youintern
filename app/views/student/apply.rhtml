@@ -1,0 +1,44 @@
+<div id="StudentInfo">
+	
+	<h2>Apply for <%= @internship.title %> at <b><%= @internship.employer.company_name %></b></h2>
+	
+	<p>Clicking on "confirm" completes your application and sends this company a copy of your resume.</p>
+	
+	<p>In addition, <b><%= @internship.employer.company_name %></b> has requested you fill out the following information:</p>
+
+	<% form_tag '/student/apply/' do %>
+		<%= hidden_field_tag :id, params[:id] %>
+		<table>
+			<% if @cb_curr[0] %>
+			<tr><td>Name:</td>				<td><%= text_field_tag :name, params[:name] %></td>
+			<% end %><% if @cb_curr[1] %>
+			<tr><td>Email:</td>				<td><%= text_field_tag :email, params[:email] %></td>
+			<% end %><% if @cb_curr[2] %>
+			<tr><td>Phone:</td>				<td><%= text_field_tag :phone, params[:phone] %></td>
+			<% end %><% if @cb_curr[3] %>
+			<tr><td>School/College:</td>	<td><%= text_field_tag :school, params[:school] %></td>
+			<% end %><% if @cb_curr[4] %>
+			<tr><td>Major:</td>				<td><%= text_field_tag :major, params[:major] %></td>
+			<% end %><% if @cb_curr[5] %>
+			<tr><td>Graduation Year:</td>	<td><%= text_field_tag :grad, params[:grad] %></td>
+			<% end %><% if @cb_curr[6] %>
+			<tr><td>Web site:</td>			<td><%= text_field_tag :web, params[:web] %></td>
+			<% end %><% if @cb_curr[7] %>
+			<tr><td>GPA:</td>				<td><%= text_field_tag :gpa, params[:gpa] %></td>
+			<% end %>
+		</table>
+	
+		<% if @internship.extra1 and @internship.extra1 != '' %>
+		  	<table><tr><%= @internship.extra1 %></tr></table> <%= text_area_tag :extra1, params[:extra1] %><br /><br />
+		<% end %>
+		<% if @internship.extra2 and @internship.extra2 != '' %>
+		  	<table><tr><%= @internship.extra2 %></tr></table> <%= text_area_tag :extra2, params[:extra2] %><br /><br />
+		<% end %>
+		<% if @internship.extra3 and @internship.extra3 != '' %>
+		  	<table><tr><%= @internship.extra3 %></tr></table> <%= text_area_tag :extra3, params[:extra3] %><br /><br />
+		<% end %>
+
+		<%= submit_tag 'confirm', :id => @internship.id %>
+	<% end %>
+
+</div>

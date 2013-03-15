@@ -1,0 +1,17 @@
+<div id="EmployerInfo">
+<div id="logoUpload">
+  <h1><span class="gray">Upload a Logo</span></h1>
+</div>
+
+<% form_tag('/employer/save_logo', :multipart => true) do %>
+
+	<p><label for="upload_file">Select a file (must be .jpg or .png)</label> : 
+	<%= file_field_tag 'datafile' %></p>
+	
+	<p><label for="filename">And a desired filename</label> : 
+	<%= text_field_tag 'filename', @suggested %></p>
+	
+	<%= submit_tag "Upload" %>
+
+<% end %>
+</div>

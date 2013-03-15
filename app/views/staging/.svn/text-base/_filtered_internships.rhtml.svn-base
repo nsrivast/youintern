@@ -1,0 +1,23 @@
+
+<% if !@internships.empty? %>
+
+	<table>
+		<tr class="resultsHeader">
+			<td>Job Title</td>
+			<td>Employer Name</td>
+			<td>Location</td>
+		</tr>
+		<% @internships.each do |i| %>
+			<tr>
+			  <td><%= link_to i.title, :action => 'internship', :id => i %></td>
+			  <td><%= link_to i.employer.company_name, :action => 'employer', :id => i.employer %></td>
+			  <td><%= i.location %></td>
+			</tr>
+		<% end %>
+	</table>
+
+<% else %>
+
+	no results found
+	
+<% end %>

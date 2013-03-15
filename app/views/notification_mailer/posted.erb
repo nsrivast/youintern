@@ -1,0 +1,19 @@
+Employer <%= @employer.company_name %> (with username <%= @employer.username %>) posted an internship:
+
+-------------
+
+Employer: <%= @employer.company_name %>
+Title: <%= @internship.title %>
+Department: <%= @internship.department %>
+Created: <%= @internship.created_at %>
+
+Dates: <%= @internship.start_month %>/<%= @internship.start_year %> - <%= @internship.end_month %>/<%= @internship.end_year %>
+Deadline: <%= @internship.deadline_month %>/<%= @internship.deadline_year %>
+Location: <%= @internship.location %> (<%= @internship.location_zip %>)
+
+Contact: <%= @internship.contact %> - <%= @internship.contact_phone %>
+Contact email: <%= @internship.contact_email %>
+
+Compensation: <%= @internship.compensation %>
+Requirements: <%= @internship.requirements %>
+How: <%= @internship.how %>

@@ -1,0 +1,8 @@
+Hi <%= @username %>,
+
+Congratulations!  You've successfully applied to <%= @internship %> at <%= @company %>.  Give yourself a high-five!  Pour some champagne!  But don't just sit there -- stay active. 
+
+Visit our search page http://new.youintern.com/search/some_internships for more internship openings, and always stay connected with YouIntern by following our Twitter feed (http://www.twitter.com/youintern), where we provide updates regularly to keep you ahead of the game.
+
+Good luck!
+the YouIntern.com team

@@ -1,0 +1,23 @@
+<% if !@employers.empty? %>
+
+	<table>
+		<tr class="resultsHeader">
+			<td>Employer Name</td>
+			<td>Website</td>
+			<td>About the Employer</td>
+		</tr>
+		
+		<% @employers.each do |e| %>
+			<tr>
+			  <td><%= link_to e.company_name, :action => 'employer', :id => e %></td>
+			  <td><%= link_to e.company_website, e.company_website, :popup => true %></td>
+			  <td><% if e.company_about %><%= e.company_about[0..200] %> ... <%= link_to 'more', :action => 'employer', :id => e %><% end %></td>
+			</tr>
+		<% end %>
+		
+	</table>
+	
+<% else %>
+	no results found
+
+<% end %>

@@ -1,0 +1,6 @@
+Employer Name: <%= @employer_name %>
+
+Name: <%= @name %>
+Email: <%= @email %>
+
+Message: <%= @message %>

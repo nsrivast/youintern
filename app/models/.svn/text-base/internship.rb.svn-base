@@ -1,0 +1,90 @@
+require_dependency "search"
+
+class Internship < ActiveRecord::Base
+  
+  belongs_to :employer
+  has_and_belongs_to_many :students
+  
+  validates_presence_of :title
+  
+  # ===== search filters =====
+  
+  searches_on :department, :title, :location, :description, :requirements, :commitment, :compensation, :how, \
+    :contact, :contact_email
+  
+  def self.filter(ss, params)
+    
+    cities = {:ny => ['york', ' ny'], :ca => [' ca'], :ma => [' ma'], :dc => [' dc', 'd.c.'],
+      :mw => ['chicago',' mi','cleveland',' il',' ky'], :se => [' ga', ' tx', ' va',' fl'],
+      :ne => ['york',' ny',' ma',' nh',' md',' va',' nj',' pa']}
+
+    conditions = \
+      'start_year >= ' + params[:start_year_a] + ' AND start_year <= ' + params[:start_year_b] + ' AND ' + \
+      'start_month >= ' + params[:start_month_a] + ' AND start_month <= ' + params[:start_month_b] + ' AND ' + \
+      'end_year >= ' + params[:end_year_a] + ' AND end_year <= ' + params[:end_year_b] + ' AND ' + \
+      'end_month >= ' + params[:end_month_a] + ' AND end_month <= ' + params[:end_month_b] + ' AND ' + \
+      'internships.featured > -1'
+      
+    conditions += ' AND (' + cities.keys.reject{|city| not params[city]}.collect{|city| 
+        cities[city].collect{|c| 'location like "%' + c + '%"'}.join(' OR ')
+        }.join(' OR ') + ')' if cities.keys.any?{|city| params[city]}
+      
+    order_by = (cities.keys.any?{|city| params[city]} ? 'location' : 'title')
+    
+    return Internship.search(ss, {:conditions => conditions, \
+      :order => order_by, :include => [:employer]}).reject{|i|
+        (params[:paid] ? (i.compensation != '1' and i.compensation != '3') : false) || \
+        (params[:course_credit] ? (i.compensation != '0' and i.compensation != '3') : false)
+      }
+  end
+  
+  def self.featured(n)
+    Internship.find(:all, :conditions => 'featured >= 1', :order => 'updated_at DESC', :limit => n)
+  end
+  
+  def self.featured_random(x)
+    # x random featured posts
+    ftd = Internship.find(:all, :conditions => 'featured >= 1')
+    
+    n = ftd.length                      # 8
+    ns = (0..n-1).to_a                  # [0,1,2,3,4,5,6,7]
+    order = ns
+    
+    for i in (0..n-2).to_a              # 0 to 6
+      j = rand(n-i) + i
+      
+      temp = ns[i]
+      order[i] = order[j]
+      order[j] = temp                   # [2,5,3,7,0,4,1,6]
+    end
+    
+    random_ftd = []
+    for i in order[0..x-1]:
+      random_ftd += [ftd[i]]          
+    end
+    random_ftd
+    
+  end
+    
+  def self.premium
+    Internship.find(:first, :conditions => 'featured = 2', :order => 'created_at DESC')
+  end
+  
+  def self.latest(n)
+    Internship.find(:all, :order => 'created_at DESC', :conditions => 'featured > -1', :limit => n)
+  end
+  
+  # status, upgrades, links for featuring internships
+  
+  def self.feature_status(internship)
+    case internship.featured.to_i
+      when -1 then message = '<b>not featured (will not appear in searches!)</b> - <a href="/employer/feature/' + internship.id.to_s + '">feature it!</a>'
+      when 0 then message = 'Standard Post - <a href="/employer/feature/' + internship.id.to_s + '">upgrade it!</a>'
+      when 1 then message = 'Featured Post - <a href="/employer/feature/' + internship.id.to_s + '">upgrade it!</a>'
+      when 2 then message = 'Premium Post'
+    end
+    
+    message
+  end
+  
+end

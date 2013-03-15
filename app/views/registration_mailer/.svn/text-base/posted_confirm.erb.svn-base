@@ -1,0 +1,10 @@
+Hi <%= @company %>,
+
+You've successfully posted an internship (<%= @internship %>) at YouIntern.  This position at <%= @company %> is now open for student applications, and we want to thank you for registering with YouIntern and offering this opportunity for our students.
+
+We will send you an email when your internship receives an application, and you can manage your student resumes from your portfolio. If you need to edit your internship listing, you can do that from your portfolio, too. Access your portfolio by logging in at http://new.youintern.com
+
+And of course, if you have any questions or comments, please send those to support@youintern.com.
+
+Thanks!
+the YouIntern.com team

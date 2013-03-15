@@ -1,0 +1,52 @@
+8
+
+dir
+1173
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository/trunk/config/initializers
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository
+
+
+
+2008-09-11T07:36:14.552947Z
+2
+intern-u.com
+
+
+svn:special svn:externals svn:needs-lock
+
+inflections.rb
+file
+
+
+
+
+2008-09-11T07:32:25.000000Z
+acc71445fc1c65ebe6fdeba695fea714
+2008-09-11T07:36:14.552947Z
+2
+intern-u.com
+
+new_rails_defaults.rb
+file
+
+
+
+
+2008-09-11T07:32:25.000000Z
+a72cf22fb325fad78866ca6690b499b5
+2008-09-11T07:36:14.552947Z
+2
+intern-u.com
+
+mime_types.rb
+file
+
+
+
+
+2008-09-11T07:32:25.000000Z
+53b1216a09d1bbd2863d09a5db5318f0
+2008-09-11T07:36:14.552947Z
+2
+intern-u.com
+

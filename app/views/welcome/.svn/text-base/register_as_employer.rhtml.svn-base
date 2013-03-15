@@ -1,0 +1,131 @@
+<div id="LeftColumn" class="span-15" style="background-image:none; margin:10px">
+<div class="user-form">
+
+	<h1>Employer Registration</h1>
+	
+	<p><img src="/images/bigyellowpointer.png" style="float:right; margin-left:10px; margin-top:-40px;">If you have an established internship program, or if you're thinking about hiring your first intern, YouIntern makes managing the process from start to finish simple.
+	<p>	There are three different types of internship posts: </p>
+	<ul>
+		<li>
+			<strong>Standard Posts</strong> that thousands of college students can search for and apply for (<strong>$20</strong>)
+		</li>
+		<li>
+			<strong>Featured Posts</strong> with special visibility on every YouIntern page and embedded videos (<strong>$35</strong>) 
+		</li>
+		<li>
+			<strong>Premium Posts</strong> with higher visibility, custom emails to all students, and opportunity to work with YouIntern management (<strong>$60</strong>) 
+		</li>
+	</ul>
+	<p>Additionally, you can manage all of your applications, resumes and positions on YouIntern.com.  No more paperwork!</p>
+	<p>
+  <%= error_messages_for 'employer', :header_message => 'Please try again!', :message => 'We had some problems confirming your account details.' %>
+
+  <fieldset>
+  <legend>Ready to go? Let's get started ...</legend>
+
+  <% form_for :employer do |form| %>
+	
+	<br />
+	
+	<% field_set_tag 'Account information' do %>
+	<table class="formData">
+		<tr>
+			<td>
+			  <label for="username">Username:</label>
+			</td>
+			<td>
+			  <%= form.text_field :username, :size => 20%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="password">Password:</label>
+			</td>
+			<td>
+				<%= form.password_field :password, :size => 20%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="password">Confirm password:</label>
+			</td>
+			<td>
+				<%= form.password_field :password_confirmation, :size => 20%>
+			</td>
+		</tr>
+	</table>
+  	<% end %>
+	
+	<br />
+
+    <% field_set_tag 'Internship Manager' do %>
+	This is the information for the main company contact.<br />
+    <table class="formData">
+		<tr>
+	  		<td><label for="first_name">*Name:</label></td>
+	  		<td><%= form.text_field :rep_first_name, :size => 20%> (first)
+	  			<%= form.text_field :rep_last_name, :size => 20%> (last)
+			</td>
+		</tr>
+		<tr>
+	  		<td><label for="email">*Email:</label></td>
+	  		<td><%= form.text_field :rep_email, :size => 20%></td>
+		</tr>
+		<tr>
+			<td><label for="title">Title:</label></td>
+	  		<td><%= form.text_field :rep_title, :size => 20%></td>
+		</tr>
+		<tr>
+			<td>
+	  			<label for="phone">Phone:</label>
+			</td>
+			<td>
+	  			<%= form.text_field :rep_phone, :size => 20%> (xxx-xxx-xxxx)
+			</td>
+		</tr>
+		<tr>
+	  		<td><label for="phone" style="float:left; clear:both;">About you:</label></td>
+			<td><%= form.text_area :rep_about, :size => "200x5" %></td>
+		</tr>
+	</table>
+	<% end %>
+	
+	<br />
+	
+	<% field_set_tag 'Company Information' do %>
+    <table class="formData">
+		<tr>
+	  		<td><label for="username">*Name:</label></td>
+	  		<td><%= form.text_field :company_name, :size => 20%></td>
+		</tr>
+		<tr>
+			<td><label for="username">Location:</label></td>
+			<td><%= form.text_field :company_location, :size => 20%> (city, state)
+			  <%= form.text_field :company_locationzip, :size => 10%> (ZIP)</td>
+		</tr>
+	  	<tr>
+			<td><label for="username">Website:</label></td>
+			<td><%= form.text_field :company_website, :size => 20%></td>
+		</tr>
+		<tr>
+			<td><label for="username">Email:</label></td>
+			<td><%= form.text_field :company_email, :size => 20%></td>
+		</tr>
+		<tr>
+			<td><label for="username">*Industry:</label></td>
+			<td><%= form.select :company_iid, @IID_MAP.invert %></td>
+		</tr>
+		<tr>
+			<td><label for="username">About the company</label></td>
+			<td><%= form.text_area :company_about, :size => "200x5"%></td>
+		</tr>
+	</table>
+	<% end %>
+	
+	<%= submit_tag "Register now", :class => 'submit' %>
+
+  <% end %>
+  </fieldset>
+
+</div>
+</div>

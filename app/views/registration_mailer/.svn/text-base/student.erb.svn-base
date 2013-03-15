@@ -1,0 +1,22 @@
+Dear <%= @student.username %>,
+ 
+Welcome!
+ 
+You're officially registered with YouIntern.com.  On behalf of the YouIntern team, I want to personally thank you for signing up and quickly give you the vitals:
+ 
+Your user name is <%= @student.username %>.  If you've lost your password, or if you need to reset your password, visit: http://new.youintern.com/welcome/forgot_password.
+ 
+YouIntern.com is the most complete resource for interns. Here's a quick rundown of our features.  And remember, applying for internships is free for students.
+ 
+
+- We've got hundreds of open internships, submitted by employers, for you to apply for!  Just search!
+- Simple, quick profiles with your skills, interests, location and resume.  That's My Portfolio. 
+- Regional internships in your area, that appear in your location, when you visit 
+- Internship reviews written by students (and if you've had an internship, submit a review!)
+- Expert advice blogs with brand new content from industry professionals
+
+
+Our goal is simple: to create the most informative resource for interns.  If you have any questions, suggestions or comments, email me personally: dan@youintern.com
+ 
+Thanks,
+the YouIntern.com team

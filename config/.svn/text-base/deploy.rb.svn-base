@@ -1,0 +1,43 @@
+require "mt-capistrano"
+
+set :site,         "9257"
+set :application,  "new"
+set :webpath,      "new.youintern.com"
+set :domain,       "youintern.com"
+set :user,         "serveradmin%intern-u.com"
+set :password,     "fKBqQRXP"
+
+# repository on (gs)
+set :repository, "svn+ssh://#{user}@#{domain}/home/#{site}/data/svn_new/repository/trunk"
+
+# which environment to work in
+set :rails_env,    "production"
+
+# necessary for functioning on the (gs)
+default_run_options[:pty] = true
+
+# these shouldn't be changed
+role :web, "#{domain}"
+role :app, "#{domain}"
+role :db,  "#{domain}", :primary => true
+set :deploy_to,    "/home/#{site}/containers/rails/#{application}"
+
+# update .htaccess rules after new version is deployed
+after "deploy:symlink".to_sym, "mt:generate_htaccess".to_sym
+
+set :use_sudo, false
+
+#default_environment["PATH"] = "/home/9257/data:"
+                              
+default_environment["PATH"] = "/home/9257/data/rubygems/lib:/home/9257/data:" + \
+                              "/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:" + \
+                              "/home/9257/data/rubygems/bin:/home/9257/data/rubygems/gems/bin:"
+
+task :after_update_code, :roles => :app do
+  run "ln -nfs /home/#{site}/containers/rails/#{application}/shared/system/uploads/resumes #{release_path}/public"
+  run "ln -nfs /home/#{site}/containers/rails/#{application}/shared/system/uploads/logos #{release_path}/public"
+end
+
+after "deploy", "deploy:cleanup"
+
+

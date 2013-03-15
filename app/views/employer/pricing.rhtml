@@ -1,0 +1,29 @@
+<div id="EmployerInfo">
+
+<h2>Internship Packages</h2>
+
+	<p>Your post on YouIntern is seen by thousands of college students around the country, and as you can tell by the updating feed on the main page, we're seeing new signups every day.  
+		Here's a look at our internship packages, so that you can select the option that best suits your needs.</p>
+		
+	<p>If you have any questions, feel free to call Anand at 617-699-1150</p>
+	
+	<table class="profileTable">
+		<tr>
+			<td width="300px"><h4><b>Listing Type</b></h4></td>
+			<td><h4><b>Standard</b></h4></td>
+			<td><h4><b>Featured</b></h4></td>
+			<td><h4><b>Premium</b></h4></td>
+		</tr><tr>
+			<td><h4>(scroll over list items to find out more)</h4></td>
+			<td><center><h4>$20</h4></center></td>
+			<td><center><h4>$35</h4></center></td>
+			<td><center><h4>$60</h4></center></td>
+		</tr>
+		<%= render :partial => 'checkmarks' %>
+	</table>
+
+	<div align="right">
+		<h3><%= link_to 'Create Your Internship >>', :action => 'add_internship' %></h3>
+	</div>
+</div>
+		

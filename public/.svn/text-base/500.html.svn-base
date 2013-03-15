@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  	<head>	
+		<title>YouIntern.com | Internship Reviews and Postings</title>
+		<meta name="description" content="Find internships and employer reviews at YouIntern.com for advertising internships and more" />
+		<meta name="keywords" content="internship, review, employer, company, internship review, apply" />
+			<link href="/stylesheets/blueprint/screen.css?1238383108" media="all" rel="stylesheet" type="text/css" />	
+			<link href="/stylesheets/blueprint/print.css?1238383108" media="print" rel="stylesheet" type="text/css" />
+			<link href="/stylesheets/master.css?1238383108" media="all" rel="stylesheet" type="text/css" />
+			<link href="/stylesheets/uni-form.css?1238383108" media="all" rel="stylesheet" type="text/css" />
+	</head>
+	
+	
+	<body>
+	  <div id="PageWrapper" class="container">
+		
+		<!-- HEADER -->
+		<div id="Header" class="span-24">
+			<!-- LOGO -->
+
+			<a href="/welcome/" title="YouIntern.com Home Page">
+				<img src="/images/youinternlogo.jpg" style="border:0px; float:left; margin-top:14px; margin-left:5px;" alt="Internships and Reviews: YouIntern logo" name="Advertising Internships: YouIntern logo" />
+			</a>
+			
+			<!-- LOGIN/REGISTER -->
+			
+				<form id="login" action="/welcome/login" method="post">
+					<span class="loginheader">
+						<span id="register">
+						<a href="/welcome/forgot_password" rel="nofollow">Forgot Password</a> 
+						| <a href="/welcome/register" rel="nofollow">Register</a>
+
+						</span>
+						Login to YouIntern
+					</span>
+				
+					<fieldset>
+					  <p>
+						<input id="username" type="text" name="username" class="loginBox"/>
+						<input id="password" type="password" name="password" class="loginBox"/>
+					
+						<input name="authenticity_token" type="hidden" value=14cde80e2aef5473e733139598c3f0e6b184882b />
+						<input id="login_btn" name="commit" type="submit" value="Login" class="submitButton"/>
+
+					  </p>
+					</fieldset>
+				</form>
+			
+			
+			<!-- QUICK SEARCH -->
+			<div id="globalsearch">
+				<span class="searchheader">Search</span>
+				<fieldset>
+					  <form action="/search/some_internships" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="14cde80e2aef5473e733139598c3f0e6b184882b" /></div>
+
+				        <input class="searchBox" id="filter_keyword" name="filter_keyword" type="text" />
+					    <input class="submitButton" name="commit" type="submit" value="Go" />
+			  		  </form>
+				</fieldset>
+			</div>
+			
+		</div>
+
+		<!-- BODY -->
+		<div id="BodyWrapper" class="span-24">
+			
+		
+<div id="LeftColumn" class="span-16">
+	<div id="Welcome" class="box">
+		<p class="largetext" style="font-size:40px; color:white; font-weight:bold; letter-spacing:-0.03em; margin-bottom:0px; opacity:.50;">
+			Oops!</p>
+		
+		<p id="yellowlink" class="largetext" style="margin-bottom:10px;">
+			<br />
+			You've stumbled across a page with an error, <br />
+			which means our beta-release isn't perfect yet. <br /><br /><br />
+			If you have any concerns or questions, please email us at support@youintern.com or click "Contact Us" at the bottom of the page.
+			Thanks for your patience!</p>
+	</div>
+</div>
+		
+<!-- LATEST ACTIVITY ON RIGHT -->
+<div id="RightColumn" class="span-8">
+  <div class="rightColumnBox">
+
+	<h1><a href="/welcome/featured" style="color:white;">Featured Internships >></a></h1>	
+	<ul>
+		
+			<li>
+				<strong id="blacklink_featured_0"><a href="/search/internship/350">Online Marketing Intern</a></strong> at
+				<em><a href="/search/employer/1750">GrouperEye (.com)</a></em><br />
+
+				<span class="byline">Internship | Work Virtually | 
+					Jan 02, 2009</span>				
+			</li>
+		
+			<li>
+				<strong id="blacklink_featured_0"><a href="/search/internship/252">Intern: General Advertising Office</a></strong> at
+				<em><a href="/search/employer/1448">PARTNERS+simons</a></em><br />
+				<span class="byline">Internship | Boston, MA | 
+					Sep 30, 2008</span>				
+			</li>
+		
+			<li>
+
+				<strong id="blacklink_featured_0"><a href="/search/internship/234">Creative Intern</a></strong> at
+				<em><a href="/search/employer/1369">Avenue A | Razorfish_</a></em><br />
+				<span class="byline">Internship | New York, NY | 
+					Sep 25, 2008</span>				
+			</li>
+		
+	</ul>
+	
+	<h1><a href="/welcome/latest_internships" style="color:white;">Latest Internships >></a></h1>
+	<ul>
+
+	  				
+		  <li><div class="internship_latest">
+			<strong id="blacklink0"><a href="/search/internship/408">Internet Radio/Content Internship</a>
+			</strong> at <em>
+			<a href="/search/employer/1740">Xhang Creative</a>
+			</em><br /><span class="byline">Internship | Portland, Oregon (but can be done from anywhere) | 
+				Mar 21, 2009 </span>
+		  </div></li>
+
+					
+		  <li><div class="internship_latest">
+			<strong id="blacklink0"><a href="/search/internship/407">Social Media Intern</a>
+			</strong> at <em>
+			<a href="/search/employer/1790">Global CIO Media, LLC</a>
+			</em><br /><span class="byline">Internship | Downers Grove, IL | 
+				Mar 17, 2009 </span>
+		  </div></li>
+
+					
+		  <li><div class="internship_latest">
+			<strong id="blacklink0"><a href="/search/internship/405">Internet Marketing Intern</a>
+			</strong> at <em>
+			<a href="/search/employer/1786">Ardis Health</a>
+			</em><br /><span class="byline">Internship | New York, New York. | 
+				Mar 04, 2009 </span>
+		  </div></li>
+
+		
+	</ul>
+	
+	<h1><a href="/welcome/latest_students" style="color:white;">Latest Students >></a></h1>
+		<ul>
+			
+				<li>
+					<strong>mbergeron</strong> | University of Rhode Island,
+					<i>03/30/09</i>
+				</li>
+
+			
+				<li>
+					<strong>mbukuru</strong> | ,
+					<i>03/30/09</i>
+				</li>
+			
+				<li>
+					<strong>ABronwyn</strong> | Emerson College,
+					<i>03/30/09</i>
+
+				</li>
+			
+				<li>
+					<strong>designaway</strong> | Syracuse University,
+					<i>03/30/09</i>
+				</li>
+			
+		</ul>
+
+	<h1><a href="http://twitter.com/YouIntern" style="color:white;">Latest Tweets >></a></h1>
+
+	<div id="LatestTweets" style="clear:both; margin-left:10px;">
+
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,124,0" width="290" height="350" id="TwitterWidget" align="middle">
+			<param name="allowScriptAccess" value="sameDomain" />
+			<param name="allowFullScreen" value="false" />
+			<param name="movie" value="http://static.twitter.com/flash/widgets/profile/TwitterWidget.swf" />
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="#000000" />
+			<param name="FlashVars" value="userID=17193221&styleURL=http://static.twitter.com/flash/widgets/profile/smooth.xml">
+
+			<embed src="http://static.twitter.com/flash/widgets/profile/TwitterWidget.swf" quality="high" bgcolor="#000000" width="290" height="350" name="TwitterWidget" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" FlashVars="userID=17193221&styleURL=http://static.twitter.com/flash/widgets/profile/smooth.xml"/>
+		</object>
+	</div>
+  </div>
+</div>
+
+		</div>
+
+		<!-- FOOTER -->
+		<div id="Footer" style="height:22px">
+
+			<center>
+				<a href="/welcome/go_home" style="color:white; text-decoration:none;">My Portfolio</a> &nbsp; | &nbsp;
+				<a href="/search/some_internships" style="color:white; text-decoration:none;">Search Internships, Employers, Reviews</a> &nbsp; | &nbsp;
+				<a href="/welcome/contact" style="color:white; text-decoration:none;">Contact Us</a> &nbsp; | &nbsp;
+
+				<a href="/welcome/about" style="color:white; text-decoration:none;">About Us</a> &nbsp; | &nbsp;
+				<a href="/welcome/partners" style="color:white; text-decoration:none;">Our Partners</a>
+			</center>
+		</div>
+		
+	</div>
+	
+	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		_uacct = "UA-1416899-1";
+		urchinTracker();
+	</script>
+	<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+	<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/YouIntern.json?callback=twitterCallback2&amp;count=5"></script>
+	
+	</body>
+</html>

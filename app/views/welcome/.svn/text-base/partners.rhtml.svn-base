@@ -1,0 +1,71 @@
+<div id="LeftColumn" class="span-16" style="background-image:none;">
+<div class="user-form">
+	
+	<fieldset>
+		<h1>YouIntern Partners</h1>
+		<p>YouIntern is proud to partner with the institutions below, as we work to build an active, vibrant network dedicated to interns and internships.</p>
+		
+		<p>To become a YouIntern partner, please <%= link_to 'click here', :action => 'partner'%>.</p>
+		<hr />
+		
+		<table>
+		  <tr>
+		    <td><div><img src="http://www.youintern.com/files/asu_logo.gif" alt="Appalachian State University logo" title="" /></div></td>
+			<td></td><td><a href="http://www.appstate.edu" class="link" target="blank">
+				<h3>Appalachian State University</h3>
+		    	<span class="underline">www.appstate.edu</span></a><br /><br /><br />
+			</td>
+		  </tr><tr>
+		    <td><div><img src="http://www.youintern.com/files/babson_logo.gif" alt="Babson College logo" title="" /></div></td>
+			<td></td><td><a href="http://www.bu.edu/com" class="link" target="blank">
+				<h3>Babson College</h3>
+		    	<span class="underline">www.babson.edu</span></a><br /><br /><br />
+			</td>
+		  </tr><tr>
+		    <td><div><img src="http://www.youintern.com/files/bu_logo.gif" alt="Boston University College of Communication logo" title="" /></div></td>
+			<td></td><td><a href="http://www.bu.edu/com" class="link" target="blank">
+				<h3>Boston University College of Communication</h3>
+		    	<span class="underline">www.bu.edu/com</span></a><br /><br /><br />
+			</td>
+		  </tr><tr>
+		    <td><div><img src="/images/CN_logo.png" alt="Collegiate Netowrk logo" title="" /></div></td>
+			<td></td><td><a href="http://www.collegiatenetwork.org/" class="link" target="blank">
+				<h3>Collegiate Network</h3></a>
+				For more than 25 years, the Collegiate Network has supported independent college newspapers that serve to focus public awareness on the politicization of American college and university classrooms, curricula, student life, and the resulting decline of educational standards. Each year over 100 papers across the country enjoy the benefits of a membership with the Collegiate Network, and the number continues to grow. CN member papers have earned reputations for both in-depth reporting and witty commentary. They serve to raise the level of discourse on the campus and provide an outlet for students to keep university faculty and administrations honest. Many prominent journalists have got their start by working for a CN paper.
+		    	<br /><a href="http://www.collegiatenetwork.org/" class="link" target="blank"><span class="underline">www.collegiatenetwork.org</span></a><br /><br /><br />
+			</td>
+		  </tr><tr>			
+		    <td><div><img src="http://www.youintern.com/files/vcu_logo.gif" alt="VCU Brandcenter logo" title="" /></div></td>
+			<td></td><td><a href="http://www.brandcenter.vcu.edu" class="link" target="blank">
+				<h3>VCU Brandcenter</h3>
+				<span class="underline">www.brandcenter.vcu.edu</span></a><br /><br /><br />
+			</td>
+
+
+		  </tr><tr>			
+		    <td><div><img src="http://www.loftstel.com/images/admin/youinternbanner.gif" alt="Loftstel logo" title="" width="200" height="40" /></div></td>
+			<td></td><td><a href="http://www.loftstel.com/" class="link" target="blank">
+				<h3>Loftstel</h3>
+				<span class="underline">www.loftstel.com</span></a><br /><br /><br />
+			</td>
+			
+		  </tr><tr>			
+		    <td><div><img src="http://www.studenthousing.org/files/ehstheme_logo.png" alt="EHS logo" title="" /></div></td>
+			<td></td><td><a href="http://www.studenthousing.org" class="link" target="blank">
+				<h3>Educational Housing Services</h3>
+				<span class="underline">www.studenthousing.org</span></a><br /><br /><br />
+			</td>
+	
+		  </tr>
+		</table>
+		
+		<hr />
+		
+		<p><b>YouIntern.  Connecting students and employers.</b></p>
+		
+		<img src="/images/youinternlogo.jpg" style="border:0px; float:left; margin-top:14px; margin-left:5px;" alt="Internships and Reviews: YouIntern logo" name="Advertising Internships: YouIntern logo" />
+
+	</fieldset>
+	
+</div>
+</div>

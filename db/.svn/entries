@@ -1,0 +1,43 @@
+8
+
+dir
+1173
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository/trunk/db
+svn+ssh://serveradmin%intern-u.com@intern-u.com/home/9257/data/svn_new/repository
+
+
+
+2008-09-18T00:19:35.239289Z
+113
+intern-u.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+f92bc1bc-9956-0410-80bb-b96374333bb2
+
+schema.rb
+file
+1220
+
+
+
+2009-03-15T05:27:17.000000Z
+3ee13ee67d0ddbc9b448ae5b39f235a7
+2009-03-15T05:35:46.484034Z
+1220
+intern-u.com
+
+migrate
+dir
+

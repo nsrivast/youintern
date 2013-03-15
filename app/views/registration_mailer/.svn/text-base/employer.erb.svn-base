@@ -1,0 +1,23 @@
+Hi there,
+
+Thanks for registering with YouIntern.com.  Our goal is to create the web's most dynamic internship resource to connect students and employers, and your posts will be well received by our student users.
+
+Your user name is <%= @employer.username %> and if you've lost your password, you can recover it here: http://new.youintern.com/welcome/forgot_password
+
+
+Remember, with YouIntern.com you can:
+
+- Post your internships for free
+- Add them as Location-Targeted Posts ($10/week) or Featured Posts ($25/week)
+- Manage all of your applications and resumes with My Portfolio
+- Contact candidates via our website
+- Use one resource to reach students, not multiple channels
+
+Now log back in and find some interns!  And if you want to talk about partnering up, shoot us an email.  We're always trying to engage interns in new, innovative ways.
+
+
+Thanks,
+The YouIntern.com Team
+support@youintern.com
+
+P.S. You can ALWAYS email us.  We're here to help.  Personally.

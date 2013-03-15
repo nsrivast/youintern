@@ -1,0 +1,40 @@
+<% @internships = Internship.find(:all, {:conditions => 'featured > -1', :order => 'title', :include => [:employer]}) %>
+
+<div id="SearchResults">	
+	<h1><span class="gray">All Internships</span></h1>
+	
+	<h3>View <b><%= link_to 'all employers', :action => 'all_employers' %></b>, 
+		or return to <%= link_to 'filtered search', :action => 'some_internships' %></h3>
+		
+	<p><b>Hint: click on column headers to sort!</b></p>
+</div>	
+
+<div id="internship_results" >
+	<table class="sortable">
+		
+		<tr class="resultsHeader" style="background-color:gray;">
+			<td><b>Job Title, Department</b></td>
+			<td><b>Employer</b></td>
+			<td><b>Location</b></td>
+			<td><b>Description</b></td>
+			<td><b>Dates</b></td>
+		</tr>
+		<% for i in @internships %>
+			<tr>
+			  	<td><a href="/search/internship/<%=i.id%>"><%= i.title %></a><br />
+					<%= i.department %></td>
+			  	<td><a href="/search/employer/<%=i.employer.id%>"><%= i.employer.company_name %></a></td>
+			  	<td><%= i.location %></td>
+				<td><%=h i.description[0..150] %> ... </td>
+
+			  	<td><% if i.start_year and i.end_year and i.start_month > 0 and i.end_month > 0%>
+						<%= Time.utc(i.start_year, i.start_month).strftime("%m/%Y") %> - 
+						<%= Time.utc(i.end_year, i.end_month).strftime("%m/%Y") %>
+					<% else %>
+						date unspecified
+					<% end %>
+				</td>
+			</tr>
+	    <% end %>
+	</table>
+</div>

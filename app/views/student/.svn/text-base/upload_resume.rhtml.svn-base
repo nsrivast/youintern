@@ -1,0 +1,18 @@
+<div id="StudentInfo">
+<div id="resumeUpload">
+  <h1><span class="gray">Upload a Resume</span></h1>
+	<p>Got a finely polished resume to show off? Upload it and you'll be able to automatically send it along with your internship applications.</p>
+</div>
+
+<% form_tag('/student/save_resume', :multipart => true) do %>
+
+	<p><label for="upload_file">Select a file (must be .doc or .pdf and less than 100kB)</label> : 
+	<%= file_field_tag 'datafile' %></p>
+	
+	<p><label for="filename">And the filename you want</label> : 
+	<%= text_field_tag 'filename', @suggested %></p>
+	
+	<%= submit_tag "Upload" %>
+
+<% end %>
+</div>

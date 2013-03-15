@@ -1,0 +1,247 @@
+
+body {background-color:#4D7E99; margin:0px; padding:0px;}
+a:link{color:#C01F25; text-decoration:none;}
+a:visited{color:#C01F25; text-decoration:none;}
+a:hover{color:#E6252B; text-decoration:underline;}
+
+/* Colors */
+
+.black {color:black;}
+.yellow {color:yellow;}
+.gray {color:#777777;}
+
+/* Font Sizes */
+.largetext{font-size:1.4em;}
+
+/* Utility Styles */
+ul.horizontal {display:inline; margin:0px; padding:0px;}
+ul.horizontal li{display:inline;}
+
+
+#blacklink a:link{color:black; text-decoration:none;}
+#blacklink a:visited{color:black; text-decoration:none;}
+#blacklink a:hover{color:black; text-decoration:underline;}
+
+#yellowlink a:link{color:yellow; text-decoration:none;}
+#yellowlink a:visited{color:yellow; text-decoration:none;}
+#yellowlink a:hover{color:yellow; text-decoration:underline;}
+
+#fieldWithErrors input{color:#ADADAD;}
+
+h1.logo{color:white; float:left; font-size:2.4em; margin-bottom:0px; margin-top:6px; margin-left:12px;}
+span.byline{ font-size:0.8em; margin-top:-5px;}
+.imageShadow { float:left; background: url(../images/shadowAlpha.png) no-repeat bottom right !important; background: url(../images/shadow.gif) no-repeat bottom right; margin: 10px 0 0 5px; margin-left:32px;}
+.imgShadow img { display: block; position: relative; background-color: #fff; border: 1px solid #a9a9a9; margin: -6px 6px 6px -6px; padding: 4px;} 
+
+
+#Header {height:90px; background-color:white;}
+#HeaderGutter{background-image:url(/images/navbarbg.gif); background-repeat:repeat-x; background-position: top left; border-top-width:1px; border-color:#E4E4E4; border-style:solid; height:31px;}
+
+#login input[type=text]{margin-right:5px !important; vertical-align:top; width:125px;}
+#login input[type=password]{margin-right:5px !important; vertical-align:top; width:125px;}
+#login input[type=submit]{font-size:10px;width:40px; }
+#login {color:black; font-weight:normal; float:right; margin-top:5px; width:325px;}
+#login a:link{color:white; text-decoration:none;}
+#login a:visited{color:white; text-decoration:none;}
+#login a:hover{color:white; text-decoration:underline;}
+#login .loginheader {background-color:#4E4E4E; color:white; display:block; margin-bottom:5px; padding:0px 5px 1px 5px;}
+#login fieldset{border:none; margin:0px; padding:0px; width:100%;}
+#login fieldset label{font-size:11px; font-weight:normal; margin-top:20px; position:absolute;}
+#login p{font-size:10px; margin:0px; padding:0px;}
+#login legend{background-color:#4E4E4E; color:white; font-size:11px; font-weight:normal; margin:0; margin-bottom:5px; padding:3px 8px;}
+#login legend span{float:right; height:14px; line-height:13px; text-align:left; }
+#login #register {float:right;}
+#register a:link{color:#ADADAD;}
+#register a:visited{color:#ADADAD;}
+
+#logout input[type=text]{margin-right:5px !important; vertical-align:top; width:125px;}
+#logout input[type=password]{margin-right:5px !important; vertical-align:top; width:125px;}
+#logout input[type=submit]{font-size:10px;width:40px; }
+#logout {color:black; font-weight:normal; float:right; margin-top:5px; margin-right:5px; width:auto;}
+#logout a:link{color:white; text-decoration:none;}
+#logout a:visited{color:white; text-decoration:none;}
+#logout a:hover{color:white; text-decoration:underline;}
+#logout .loginheader {background-color:#4E4E4E; color:white; display:block; margin-bottom:5px; padding:0px 5px 1px 5px;}
+#logout fieldset{border:none; margin:0px; padding:0px; width:100%;}
+#logout fieldset label{font-size:11px; font-weight:normal; margin-top:20px; position:absolute;}
+#logout p{font-size:10px; margin:0px; padding:0px;}
+#logout legend{background-color:#4E4E4E; color:white; font-size:11px; font-weight:normal; margin:0; margin-bottom:5px; padding:3px 8px;}
+#logout legend span{float:right; height:14px; line-height:13px; text-align:left; }
+#logout a:link{color:#ADADAD;}
+#logout a:visited{color:#ADADAD;}
+
+#globalsearch input[type=text]{margin-right:5px !important; vertical-align:top; width:165px;}
+#globalsearch input[type=button]{width:15px;}
+#globalsearch {color:black; font-weight:normal; float:right; margin-top:5px; margin-right:10px; width:220px;}
+#globalsearch a:link{color:white; text-decoration:none;}
+#globalsearch a:visited{color:white; text-decoration:none;}
+#globalsearch a:hover{color:white; text-decoration:underline;}
+#globalsearch .searchheader {background-color:#C01F25; color:white; display:block; margin-bottom:5px; padding:0px 5px 1px 5px;}
+#globalsearch fieldset{border:none; margin:0px; padding:0px; width:100%;}
+#globalsearch fieldset label{font-size:11px; font-weight:normal; margin-top:20px; position:absolute;}
+#globalsearch p{font-size:10px; margin:0px; padding:0px;}
+#globalsearch legend{background-color:#C01F25; color:white; font-size:11px; font-weight:normal; margin:0; margin-bottom:5px; padding:3px 8px;}
+#globalsearch legend span{float:right; height:14px; line-height:13px; text-align:right; }
+
+
+#NavMenu{ background-color:transparent; float:left; font-size:13px; font-weight:bold; letter-spacing:0em;}
+#NavMenu a{color:#424242; text-decoration:none;}
+#NavMenu a:visited{color:#424242; text-decoration:none;}
+#NavMenu a:hover{color:black; text-decoration:underline;}
+#NavMenu a.selected{color:black; text-decoration:underline;}
+ 
+#SyndicationList {float:right; margin-top:5px; margin-right:10px;}
+#SyndicationList ul{display:inline; margin:0; padding:0;}
+#SyndicationList ul li{display:inline; margin:0; padding:0;}
+#SyndicationList a:link{color:black; text-decoration:none;}
+#SyndicationList a:visited{color:black; text-decoration:none;}
+#SyndicationList a:hover{colr:black; text-decoration:underline;}
+#SyndicationList img.feedIcon {margin-bottom:-3px;}
+ 
+ul.dropDownMenu{display:inline; margin:0px; margin-left:0px; }
+/*ul.dropDownMenu li:hover{background-color:#F3F3F3; color:black;}
+ul.dropDownMenu li:hover .header{font-weight:bold;}*/
+ul.dropDownMenu li{color:black; cursor:pointer; display:inline; float:left; padding-left:6px; padding-right:5px; padding-top:5px; position:relative;}
+ul.dropDownMenu li ul{; color:black; display:none; left:0; margin:0px; padding:0px; position:absolute; top:1em;}
+ul.dropDownMenu li ul li{background-color:#E2E2E2; border-right-width:1px; border-right-style:solid; border-right-color:white; cursor:pointer; margin:0px; padding-bottom:2px; margin-left:-10px;}
+ul.dropDownMenu li ul li:hover{background-color:gray; color:black; font-weight:medium;}
+/*ul.dropDownMenu li:hover ul{display:block; margin:0;}*/
+ul.dropDownMenu li > ul{top:auto; left:auto;}
+
+ 
+li.selected{background-color:white; font-weight:bold; color:black; border:0px;}
+li:hover .selected{background-color:white; font-weight:bold; color:black;}
+
+
+
+#BodyWrapper {background-color:white; border-top:1px solid #CCCCCC; color:black;} 
+
+
+#LeftColumn {background-image:url(../images/sunburstbg.png); background-color:white; background-repeat:repeat-x; background-position: top left; margin-right:0px; padding-right:0px; padding-bottom:35px;}
+#LeftColumn .box{margin-left:10px; margin-right:0; margin-top:10px; }
+#Welcome {background-color:transparent; background-position:top left; background-repeat:repeat-x; color:white; font-weight:lighter; height:auto; margin-bottom:5px; padding-bottom:0px; width:450px;}
+#Welcome h1{color:white; font-weight:bold; letter-spacing:-0.03em; margin-bottom:10px; opacity:.35; width:410px;}
+
+#Search { background-image:url(../images/searchbarbg.gif); background-position:top left; background-repeat:repeat-x; color:black; padding:1em;}
+#Search h3{color:black; margin-top:0px; margin-left:30px;}
+#Search ul.filterList {clear:both; display:inline; list-style:none;}
+#Search ul.filterList li{display:inline; vertical-align:top;}
+
+#RightColumn {background-color:#FAFAFA; height:100%; margin-right:0px !important; padding-top:0px; width:320px;}
+#RightColumn .box{height:auto; margin-bottom:20px; margin-left:10px;}
+#RightColumn h1{background-color:#808080;
+background-image:url(/images/navarrow.gif);
+background-repeat:no-repeat;
+background-position:bottom right;
+color:white;
+font-weight:bold;
+font-size:14px;
+margin-bottom:10px;
+margin-left:0px;
+margin-right:0px;
+margin-top:0px; 
+padding-bottom:7px;
+padding-left:7px;
+padding-right:7px;
+padding-top:7px;}
+#UserLocation{font-size:10px;}
+
+#RightColumn h1.featured{background-color:#4E4E4E;}
+#RightColumn h1.featuredred{background-color:#CA0000;}
+
+/* Splash -- inserted by Nikhil */
+
+#LeftColumnSplash {background-color:white; width:500px;}
+#LeftColumnSplash h1{background-color:#808080;background-image:url(/images/navarrow.gif);background-repeat:no-repeat;background-position:bottom right;color:white;font-weight:bold;font-size:14px;margin-bottom:10px;margin-left:0px;margin-right:0px;margin-top:0px; padding-bottom:7px;padding-left:7px;padding-right:7px;padding-top:7px;}
+#RightColumnSplash {background-color:white; width:500px;}
+#RightColumnSplash h1{background-color:#808080;background-image:url(/images/navarrow.gif);background-repeat:no-repeat;background-position:bottom right;color:white;font-weight:bold;font-size:14px;margin-bottom:10px;margin-left:0px;margin-right:0px;margin-top:0px; padding-bottom:7px;padding-left:7px;padding-right:7px;padding-top:7px;}
+#BottomSplash {background-color:white;}
+#BottomSplash h1{background-color:#808080;background-image:url(/images/navarrow.gif);background-repeat:no-repeat;background-position:bottom right;color:white;font-weight:bold;font-size:14px;margin-bottom:10px;margin-left:0px;margin-right:0px;margin-top:0px; padding-bottom:7px;padding-left:7px;padding-right:7px;padding-top:7px;}
+
+/* End of splash */
+
+#FeaturedPostings {/*background-image:url(../images/boxbg.gif); background-position:top left; background-repeat:repeat-x;*/ background-color:transparent; color:black; height:auto; padding:0px;}
+#FeaturedPostings ul {list-style:none; margin:0; padding:0;}
+#FeaturedPostings ul li{list-style:none; margin-bottom:10px; line-height:12px;}
+
+#LatestPostings {/*background-image:url(../images/boxbg.gif); background-position:top left; background-repeat:repeat-x;*/ background-color:transparent; color:black; height:auto; padding:0px;}
+#LatestPostings ul {list-style:none; margin:0; padding:0;}
+#LatestPostings ul li{list-style:none; margin-bottom:10px; line-height:12px;}
+
+#RecentReviews {/*background-image:url(../images/boxbg.gif); background-position:top left; background-repeat:repeat-x;*/ background-color:transparent; color:black; height:220px; padding:0px;}
+#RecentReviews {font-size:92%;}
+#RecentReviews ul {list-style:none; margin:0; padding:0;}
+#RecentReviews ul li{list-style:none; margin-bottom:10px;}
+#RecentReviews .userImage{float:left; margin-right:10px; margin-bottom:20px;}
+
+#BlogContentStaging {/*background-image:url(../images/boxbg.gif); background-position:top left; background-repeat:repeat-x;*/ background-color:transparent; color:black; height:220px; padding:0px;}
+#BlogContentStaging {font-size:92%;}
+#BlogContentStaging ul {list-style:none; margin:0; padding:0;}
+#BlogContentStaging ul li{list-style:none; margin-bottom:10px;}
+#BlogContentStaging .userImage{float:left; margin-right:10px; margin-bottom:20px;}
+
+#BlogContent {background-color:transparent; clear:both; margin-left:0px;}
+#BlogContent h2{margin-bottom:0px;}
+#BlogContent ul{margin:0px; padding:0px; list-style:none;}
+#BlogContent ul li{margin:0px; margin-bottom:10px; padding:0px;}
+
+#EmployerInfo {background-color:white; padding:25px; padding-bottom:0px;}
+#EmployerInfo h2 img{margin-right:10px;}
+#EmployerInfo h3 {margin-bottom:0px;}
+#EmployerInfo img.employerLogo{float:left; margin-bottom:10px; margin-right:10px;}
+#EmployerInfo table td.tdlegend{font-weight:bold; vertical-align:top;}
+#EmployerInternships {padding:25px; padding-bottom:0px; padding-top:0px;}
+#EmployerReviews {padding:25px; padding-bottom:0px;}
+
+div.blockHeader {clear:both; display:block; height:200px;}
+div.infoBlock {clear:both; display:block; margin-top:10px;}
+
+.yellow{background-image:url(/images/sunburstyellow.png); background-position:top left; background-repeat:none;}
+.yellow h2{color:white;}
+
+#StudentInfo h3{margin-bottom:0px;}
+#StudentInfo {background-color:white; padding:25px; padding-bottom:0px;}
+#StudentInfo table td.tdlegend{font-weight:bold; vertical-align:top;}
+#StudentReviews {padding:25px; padding-bottom:0px;}
+#StudentApplications {padding:25px; padding-bottom:0px;}
+
+table.profileTable{background-image:url(/images/largegraybg.gif); border: 1px solid #DADADA; clear:both; padding:20px;}
+
+
+/* FORM STYLE */
+#notice{background-color:#C70000; color:white !important; padding:10px;}
+#notice font{color:white !important;}
+
+.user-form{background-color:white; padding:25px;}
+.user-form input{font-family:Helvetica, Arial, sans-serif !important;}
+.user-form fieldset{background-color:white; border:0px; padding:0px;}
+.user-form fieldset fieldset{background-color:#e4e4e4; background-image:url(/images/largegraybg.gif); background-repeat:repeat-x repeat-y; border-color:#DADADA; border-width:1px; border-style:solid; padding:1.4em;}
+.user-form table.formData td{vertical-align:top; text-align:left;}
+.user-form textarea{height:150px;}
+
+#SearchResults{background-color:white; padding:15px 20px 15px 20px;}
+#SearchResults div.hidden{display:none;}
+#filterList {display:inline; list-style:none; margin:0px; padding:0px;}
+#filterList a{display:block;}
+#filterList li{display:inline; float:left; list-style:none; margin:0px; padding:0px; width:180px;}
+#filterList li ul {background-color:white; font-size:90%; position: absolute;left: -999em;}
+#filterList li:hover ul {left: auto;}
+#filterList li:hover ul li{height:auto; overflow:auto;}
+#filterList li:hover ul li.restrictHeight{height:250px; width:200px; overflow:auto;}
+#filterList li:hover ul, #filterList li.sfhover ul {left: auto;}
+#filterer{margin-top:15px;}
+#filterer tr.resultsHeader td{font-weight:bold;}
+
+ul#searchTabs{background-color:#C01F25; display:block; height:22px;}
+ul#searchTabs li{background-color:transparent; background-repeat:repeat-x; border: #DDDDDD solid 0px 1px 0px 1px; margin:0px 5px 0px 5px; padding: 0px 10px 0px 10px; position:relative; top:5px; width:75px;}
+ul#searchTabs li.selected{background-color:white; height:20px;}
+ul#searchTabs a:link{color:white; text-decoration:none;}
+ul#searchTabs a:visited{color:white; text-decoration:none;}
+ul#searchTabs a:hover{text-decoration:underline;}
+
+
+
+ul#searchTabs li.selected a:link{color:black; text-decoration:none;}
+ul#searchTabs li.selected a:visited{color:black; text-decoration:none;}
+ul#searchTabs li.selected a:hover{color:black; text-decoration:underline;}
+

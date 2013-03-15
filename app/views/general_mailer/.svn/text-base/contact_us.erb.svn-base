@@ -1,0 +1,7 @@
+
+Name: <%= @name %>
+Topic: <%= @topic %>
+Email: <%= @email %>
+
+Message: <%= @message %>
+

@@ -1,0 +1,66 @@
+/*---------------------------------------
+
+	Stylesheet Overrides for Homepage
+	
+-----------------------------------------*/
+
+body{background-color:#4D7E99; background-position:fixed; background-repeat:no-repeat;}
+
+div#BodyWrapper div.leftColumnBox{}
+div#BodyWrapper div.leftColumnBox img.featuredLogo{float:left; margin-right:5px; width:100px;}
+div#BodyWrapper h1{background-color:#4E4E4E; background-image:url(/images/navarrow.gif);background-position:right bottom;background-repeat:no-repeat;color:white;font-size:14px;font-weight:bold;margin:0px 0px 15px 0px;padding:7px;}
+
+input#filter{background-color:white; border:solid 1px gray; color:gray; padding:2px;}
+
+div#FeaturedPostings {border-left-style:solid; border-left-width:1px; border-left-color:silver; clear:none; float:left; margin:0px; padding:10px 0px 10px 10px;}
+div#FeaturedPostings ul li{display:block; margin-bottom:10px;}
+
+div#filterer{font-size:11px; margin-top:8px; padding:10px 20px 0px 20px;}
+div.pagination{clear:both; display:block;float:right; font-size:.9em; margin-bottom:5px;}
+div.pagination a{margin-right:5px;}
+div.pagination span{margin-right:5px;}
+div#filterer tr.resultsHeader td{font-size:12px; width:300px;}
+div#filterList{}
+div#filterList li {height:100px;}
+div#filterList li ul{display:block;}
+
+div#Footer{background-color:#4E4E4E; clear:both; display:block;}
+
+div#HeadlinePosting{float:left; display:block; margin-left:20px; margin-right:20px;}
+div#HeadlinePosting h1, h2, h3{margin:0;}
+div#HeadlinePosting h3{font-style:oblique;}
+div#HeadlinePosting img.headlineLogo{float:left; margin-right:10px; margin-bottom:10px;}
+
+div#HeroSpace{display:block; height:auto; margin:0px;}
+div#NavMenu{float:right;}
+
+div#RightColumn {background-color:white;}
+div#RightColumn .box{margin-left:20px; margin-right:15px;}
+div#RightColumn h1.featured{background-color:#808080;}
+div#RightColumn div.rightColumnBox{clear:both; display:block; margin-bottom:10px;}
+#review_results table, td, th{vertical-align:top;}
+
+div#BlogTease{clear:both; color:black; height:75px; width:275; background-color:black;
+	padding:10px 15px 10px 15px; opacity:.50;}
+div#BlogTease h4{font-family:Arial; color:white; font-size:14px;}
+
+div#Search{background-image:url(http://new.youintern.com/images/searchbarbg.gif); clear:both; color:black; height:75px; padding:15px 15px 15px 15px;}
+div#Search a:link{color:black;}
+div#Search a:visited{color:black;}
+div#Search a:hover{color:black; text-decoration:underline;}
+div#Search h3{color:gray; margin:0px 0px 10px 0px;}
+ul#searchTabs{background-color:#C01F25;border-style:solid; border-color:#F3242B; border-width:1px 0px 0px 0px; height:25px; padding-top:8px; padding-left:10px;}
+
+ul#searchTabs li{padding:3px 5px 3px 5px; top:5px;}
+ul#searchTabs li.selected{padding:3px 5px 3px 5px;}
+ul#searchTabs a:link{color:white;}
+ul#searchTabs a:visited{color:white;}
+ul#searchTabs ul li{margin:0px 10px;}
+
+div#Tweeter {float:right; display:block; width:240px;}
+div#Tweeter h2{background-color:#C01F25; color:white; display:block; float:right; margin-bottom:5px; padding:0 5px 1px;}
+
+#LeftColumn {background-image:url(../images/sunburstbg.png); background-color:white; background-repeat:repeat-x; background-position: top left; margin-right:0px; padding-right:0px; padding-bottom:35px;}
+#LeftColumn .box{margin-left:10px; margin-right:0; margin-top:10px; }
+#Welcome {background-color:transparent; background-position:top left; background-repeat:repeat-x; color:white; font-weight:lighter; height:auto; margin-bottom:5px; padding-bottom:0px; width:450px;}
+#Welcome h1{color:white; font-weight:bold; letter-spacing:-0.03em; margin-bottom:10px; opacity:.35; width:410px;}

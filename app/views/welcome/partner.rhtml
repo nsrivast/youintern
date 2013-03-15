@@ -1,0 +1,43 @@
+<div id="LeftColumn" class="span-16" style="background-image:none;">
+<div class="user-form">
+	
+	<fieldset>
+		<h1>Partner with YouIntern</h1>
+		<p>Thank you very much for your interest in becoming a <%= link_to 'YouIntern Partner', :action => 'partners' %>. There are a few ways to do so:</p>
+			
+			<ul>
+				<li>Post a link on your website</li>
+				<li>Send an email to your class list</li>
+				<li>Promote our LinkedIn Group</li>
+				<li>Promote our Facebook Page</li>
+			</ul>
+		
+		<p>Send us your contact information via the form below, and we'll get in touch with you right away.</p>
+		<p>We're fun people, and we look forward to hearing from you!</p>
+		
+		<% form_tag '/welcome/partner' do %>
+
+		<table>
+			<tr>
+			  <td width="150">Name:</td><td><%= text_field_tag :name, params[:name] %></td>
+			</tr><tr>
+			  <td>Title:</td><td><%= text_field_tag :title, params[:title] %></td>
+			</tr><tr>
+			  <td>Company/School:</td><td><%= text_field_tag :org, params[:org] %></td>
+			</tr><tr>
+		
+			  <td>E-mail:</td><td><%= text_field_tag :email, params[:email] %></td>
+			</tr><tr>
+			  <td>Phone:</td><td><%= text_field_tag :phone, params[:phone] %></td>
+			</tr><tr>
+			  <td>URL (if any):</td><td><%= text_field_tag :url, params[:url] %></td>
+			</tr><tr>
+			  <td></td><td><%= submit_tag 'Submit', :class => 'submitButton' %></td>
+			</tr>
+		</table>
+
+		<% end %>
+	</fieldset>
+
+</div>
+</div>

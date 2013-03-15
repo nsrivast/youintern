@@ -1,0 +1,8 @@
+To: <%= @contact_emails %>
+
+<%= @message %>
+
+---
+<%= @employer.rep_first_name %> <%= @employer.rep_last_name %>
+<%= @employer.company_name %>
+- user <%= @employer.username %> on YouIntern.com

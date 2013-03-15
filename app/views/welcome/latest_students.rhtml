@@ -1,0 +1,21 @@
+<div id="LeftColumn" class="span-16">
+
+	<div id="Welcome" class="box">
+			<p class="largetext" style="font-size:20px; color:white; 
+		font-weight:bold; letter-spacing:-0.03em; margin-bottom:10px; opacity:.50;">
+			Our 10 Most Recently Registered Students</p>
+	</div>
+	
+	<div id="LatestStudents" class="span-9">	
+		<ul>
+		<% @latest_students.each do |s| %>
+			<li class="clearfix">
+				<strong><%= s.username %></strong> | <%= s.school %>,
+				<i><%= s.created_at.strftime("%m/%d/%y") %></i>
+			</li>		
+			<br />
+		<% end %>
+		</ul>
+	</div>
+
+</div>

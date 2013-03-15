@@ -1,0 +1,57 @@
+<div id="SearchResults">
+	<h1><span class="gray">Search Employers</span></h1>
+	<p>Interactively search our database of employers by <b>keyword</b> or filter by <b>content or industry</b>.</p>
+	<p>You can also view our <b><%= link_to 'full employer listings', :action => "all_employers" %></b>,
+		or <b><%= link_to 'search for internships', :action => 'some_internships' %></b>.</p>
+	
+	<div>
+		<% form_tag('javascript:void(0)', :id => 'filter_input') do %>
+			
+			<% field_set_tag do %>
+			<table>
+				<tr>
+					<td width="22%"><u>keyword (optional)</u></td>
+					<td width="78%"><%= text_field_tag 'filter', params['filter_keyword'], :name => 'filter_keyword', :value => @keyword %> &nbsp; &nbsp;
+							<i id="spinner" style="display:none;"> retrieving your results ...</i></td>
+				</tr><tr>
+					</tr><td></td><td>
+				</td><tr>
+					<td><u>included employers</u></td>
+					<td><b>only those hiring</b> <%= check_box_tag :hiring, params[:hiring], params[:hiring] %> &nbsp; &nbsp;
+						<b>only those with reviews</b> <%= check_box_tag :reviews, params[:reviews], params[:reviews] %></td>
+				</tr><tr>
+					</tr><td></td><td>
+				</tr><tr>
+					<td><u>included industries</u></td>
+					<td>
+						<div id='industry_filters'>
+							<% @IID_MAP.each do |iid, industry| %>
+								<%= industry %>
+								<%= check_box_tag "iid_" + iid.to_s, params["iid_" + iid.to_s], params["iid_" +iid.to_s] %> &nbsp; &nbsp;
+							<% end %>
+						</div>
+					</td>
+				</tr><tr>
+					<td><%= link_to 'reset all filters', :action => 'employers' %></td><td></td>
+				</tr>
+			</table>
+			<% end -%>
+		<% end -%>
+
+	</div>
+	
+	<%= observe_form :filter_input,
+      				    :frequency => 1,
+					    :update => 'filterer',
+					
+						:before => "Element.show('spinner')",
+			         	:success => "Element.hide('spinner')",
+			         
+	  				    :url => {:action => 'filter_employers', :only_path => false},
+						:with => "Form.serialize('filter_input')" %>
+		
+	<div id='filterer'>
+		<%= render :partial => 'filtered_employers'%>
+	</div>
+	
+</div>

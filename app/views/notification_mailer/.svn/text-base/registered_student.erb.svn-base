@@ -1,0 +1,22 @@
+New student registered:
+
+Account Info
+-------------
+ID: <%= @student.id %>
+Username: <%= @student.username %>
+Created: <%= @student.created_at %>
+
+Personal Info
+-------------
+Name: <%= @student.first_name %> <%= @student.last_name %>
+Email: <%= @student.email %>
+School: <%= @student.school %>
+Graduation Year: <%= @student.grad_year %>
+Location: <%= @student.location %> (<%= @student.location_zip %>)
+
+Career Info
+-------------
+Desired location: <%= @student.desired_location %> (<%= @student.desired_location_zip %>)
+Skills: <%= @student.skills %>
+Interested in: <%= @student.interested_in %>
+About: <%= @student.about_me %>

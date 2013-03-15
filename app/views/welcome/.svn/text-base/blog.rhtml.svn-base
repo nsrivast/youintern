@@ -1,0 +1,28 @@
+<div id="LeftColumn" class="span-16">
+
+	<div id="Welcome" class="box">
+			<p class="largetext" style="font-size:30px; color:white; 
+		font-weight:bold; letter-spacing:-0.03em; margin-bottom:10px; opacity:.50;">
+			Jonathan Carmona: Carmonize</p>
+	</div>
+
+<% if true %>
+	<div id="BlogContent" class="box" style="margin-left:0px;">
+		<ul>
+		<% @blog_content.each_with_index do |h,i| %>
+			<% if i < 5 %>
+			<li>
+				<h2><%= h[:title] %></h2> 
+				<%= Time.parse(h[:date]).strftime("%B %d, %Y") %><br /><br />
+				<%= h[:content] %>
+			</li>
+			<hr>
+			<% end %>
+		<% end %>
+		</ul>
+	</div>
+<% else %>
+	<frame src="http://carmonize.blogspot.com/">
+<% end %>
+	
+</div>

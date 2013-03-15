@@ -1,0 +1,75 @@
+<!-- FEATURED POSTS ON TOP -->
+<% if false %><div class="span-24 clearfix" style="clear:both; margin-right:0px;"><div id="HeroSpace" class="span-24 clearfix"><div class="leftColumnBox"><% end %>
+
+<div id="LeftColumn" class="span-16">
+
+	<div id="Welcome" class="box">
+
+		<!-- WELCOME COPY -->
+		<p class="largetext" style="font-size:40px; color:white; font-weight:bold; letter-spacing:-0.03em; margin-bottom:0px; opacity:.50;">
+			Welcome to YouIntern</p>
+		
+		<table>
+			<tr>
+				<td><br /><img HEIGHT=15 WIDTH=15 src='/images/redsquare.png' alt="red_square" /></td>			
+				<td><p id="yellowlink" class="largetext" style="margin-bottom:10px;">
+					Register as a 
+					<strong><%= link_to 'student', :action => 'register_as_student' %></strong> or 
+					<strong><%= link_to 'employer', :action => 'register_as_employer' %></strong> now <br />
+					&nbsp; and land that summer position!</p>
+				</td>
+			</tr><tr>
+				<td><br /><img height=15 width=15 src='/images/redsquare.png' alt="red_square"/></td>			
+				<td><p id="yellowlink" class="largetext" style="margin-bottom:10px;">
+						<strong><%= link_to 'Read the latest', :action => 'blog' %></strong> from Jonathan Carmona,<br /> 
+						the web's most informed internship writer</p>
+				</td>
+			</tr><tr>
+				<td><br /><img HEIGHT=15 WIDTH=15 src='/images/redsquare.png' alt="red_square"/></td>			
+				<td><p id="yellowlink" class="largetext" style="margin-bottom:10px;">
+					<strong>Jake Baldridge</strong>, an Account Director at 
+					<strong><%= link_to "StrawberryFrog", :controller => "search", :action => "employer", :id => 1380 %></strong>, 
+					checks in with 
+					<strong><%= link_to "some candid advice", :action => "strawberry_frog" %></strong> 
+					about applying for internships</p> 
+				</td>
+			</tr><tr>
+				<td></td><td>
+					<div id="Search">
+					<h3>Start Your Search</h3>
+						<table>
+							<% form_tag '/search/some_internships' do %>
+								<tr>
+									<td><strong>Internships, Employers, and Reviews:</strong></td>
+									<td><%= text_field_tag :filter_keyword, params[:filter_keyword], :size => "20" %></td>
+									<td><%= submit_tag 'Go' %></td>
+								</tr>
+							<% end %>
+						</table>
+				</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+		
+	<br /><br />
+	
+	<% @big = Internship.premium %>
+	<div id="HeadlinePosting" class="span-13">
+	
+		<% @logos = Dir.glob('public/logos/' + @big.employer.id.to_s + '*') %>
+		<% if @logos != [] %>
+		  <img class="headlineLogo" src="<%=@logos[0][6..-1]%>" alt="employer logo"/>
+		<% else %>
+		  <img class="headlineLogo" src="/images/employers/logo_placeholder.jpg" alt="employer logo"/>
+		<% end %>
+		
+		<h2><a href="/search/internship/<%=@big.id%>"><%= @big.title.to_s %></a></h2>
+		<h3><%= link_to @big.employer.company_name.gsub("&", "&amp;").to_s, 
+					:controller => 'search', :action => 'employer', :id => @big.employer %></h3><br />
+		<p><%= @big.description[0..612] %></p>
+	</div>
+
+
+</div>
+

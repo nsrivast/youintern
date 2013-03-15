@@ -1,0 +1,45 @@
+<% @employers = Employer.find(:all, :order => 'created_at desc', :include => [:internships, :reviews]) %>
+
+<div id="SearchResults">	
+	<h1><span class="gray">All Employers</span></h1>
+	
+	<h3>View <b><%= link_to 'all internships', :action => 'all_internships' %></b>, 
+		or return to <%= link_to 'filtered search', :action => 'some_employers' %></h3>
+		
+	<p><b>Hint: click on column headers to sort!</b></p>
+</div>	
+
+<div id="internship_results" >
+	<table class="sortable">
+		
+		<tr class="resultsHeader" style="background-color:gray;">
+			<td width="20%"><b>Employer Name, Location</b></td>
+			<td width="40%"><b>About the Employer</b></td>
+			<td width="20%"><b>Internships</b></td>
+			<td width="20%"><b>Reviews</b></td>
+		</tr>
+		
+	    <% for e in @employers %>
+		<tr>
+		  	<td><%= link_to e.company_name, :action => 'employer', :id => e %><br />
+				<% if e.company_location %><%= e.company_location%><br /><% end %>
+				<% if e.company_website  %><a href="<%=e.company_website%>" target="_blank"><%= e.company_website %></a><% end %></td>
+		  	<td><% if e.company_about %><%= e.company_about[0..200] %><% end %></td>	
+		  	<td><% if !e.internships.empty? %><ul>
+				<% e.internships.each do |i| %>
+					<li><a href="/search/internship/<%=i.id%>"><%= i.title %></a></li>
+				<% end %></ul>
+				<% end %>
+			</td>
+			
+		  	<td><% if !e.reviews.empty? %><ul>
+				<% e.reviews.each do |r| %>
+					<li> <a href="/search/employer/<%=e.id%>/#review_<%=r.id%>">
+						reviewed by <%= r.student.username %></a></li>
+				<% end %></ul>
+				<% end %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

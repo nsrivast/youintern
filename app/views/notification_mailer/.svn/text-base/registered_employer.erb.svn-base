@@ -1,0 +1,24 @@
+New employer registered:
+
+Account Info
+-------------
+ID: <%= @employer.id %>
+Username: <%= @employer.username %>
+Created: <%= @employer.created_at %>
+
+Company Info
+-------------
+Company: <%= @employer.company_name %>
+Location: <%= @employer.company_location %> (<%= @employer.company_locationzip %>)
+Website: <%= @employer.company_website %>
+Industry: <%= @employer.company_iid %>
+About: <%= @employer.company_about %>
+
+Rep Info
+-------------
+Name: <%= @employer.rep_first_name %> <%= @employer.rep_last_name %>
+Title: <%= @employer.rep_title %>
+Email: <%= @employer.rep_email %>
+Phone: <%= @employer.rep_phone %>
+About: <%= @employer.rep_about %>
+
