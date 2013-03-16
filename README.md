@@ -18,6 +18,9 @@ was done by [Matt Donovan] (http://www.linkedin.com/in/mattddonovan).
 [screenshots] (https://github.com/nsrivast/youintern/blob/master/public/images/screenshots/search.png)
 give a good sense of the design and functionality of the site.
 
+YouIntern gathered more than 125k unique visitors over the 2 years of its operation, with 6000 students
+and 550 employers at its peak.
+
 You can read more about YouIntern here:
 * [Two New Web Sites Worth Your Time - The Washington Post] (http://voices.washingtonpost.com/federal-eye/2008/12/eyeful_two_new_web_sites_worth.html)
 * [New Sites Match Agencies With Untapped Talent - Ad Age] (http://adage.com/article/talentworks/sites-match-agencies-untapped-talent/127681/)
