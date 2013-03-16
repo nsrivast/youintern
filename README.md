@@ -3,7 +3,7 @@
 This is the codebase for a rails website I personally built and maintained from 2007-2009, as the sole 
 technical partner at YouIntern. YouIntern was an online community for interns, connecting students looking
 for work and employers looking for help. We matched employer-submitted internships with student-submitted 
-internship reviews, as well as providing networking opportunities and career advice for students looking 
+internship reviews, in addition to providing networking opportunities and career advice for students looking 
 for internships.
 
 As the recession took its toll on the US economy in 2009, employers had no trouble finding qualified 
